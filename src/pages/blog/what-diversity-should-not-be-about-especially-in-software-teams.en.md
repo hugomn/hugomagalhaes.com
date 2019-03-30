@@ -11,7 +11,7 @@ tags:
 image: ./images/20190125.jpg
 ---
 
-Diversity is any dimension that can be used to differentiate groups and people from one another. It's main goal is to encompass acceptance and respect. It means understanding by surpassing simple tolerance to ensure people truly value their differences. These can be along the dimensions of race, ethnicity, gender, sexual orientation, socio-economic status, age, physical abilities, religious beliefs, political beliefs, or other ideologies. And, even if it looks simple to accomplish, I want to give in this post a quick overview of what I think diversity should **not** be about.
+Diversity is any dimension that can be used to differentiate groups and people from one another. Its main goal is to encompass acceptance and respect. It means understanding by surpassing simple tolerance to ensure people truly value their differences. These can be along the dimensions of race, ethnicity, gender, sexual orientation, socio-economic status, age, physical abilities, religious beliefs, political beliefs, or other ideologies. And, even if it looks simple to accomplish, I want to give in this post a quick overview of what I think diversity should **not** be about.
 
 ## Why is diversity so important in software teams?
 
