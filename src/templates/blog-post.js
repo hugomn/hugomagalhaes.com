@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { graphql, withPrefix } from 'gatsby';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import EditBtn from '../components/EditBtn';
 import Tags from '../components/Tags';
 import { getStructuredData } from '../structuredData';
 import Comments from '../components/Comments';
-import PostCardList from '../components/PostCardList';
 import Layout from '../components/layout';
 import Img from 'gatsby-image';
 import ShareWidget from '../components/ShareWidget';
@@ -38,9 +36,9 @@ const Content = styled.section`
     border-radius: ${props => props.theme.blog.post.content.code.borderRadius};
   }
 
-  .gatsby-highlight{
-    margin:${props => props.theme.blog.post.content.highlight.margin};
-    padding:${props => props.theme.blog.post.content.highlight.padding};
+  .gatsby-highlight {
+    margin: ${props => props.theme.blog.post.content.highlight.margin};
+    padding: ${props => props.theme.blog.post.content.highlight.padding};
     background-color: ${props => props.theme.blog.post.content.highlight.backgroundColor};
     display: flex;
     border-radius: ${props => props.theme.blog.post.content.highlight.borderRadius};
@@ -50,27 +48,28 @@ const Content = styled.section`
       color: ${props => props.theme.blog.post.content.highlight.code.color};
     }
 
-    pre{
+    pre {
       width: 100%;
       border: 2px solid ${props => props.theme.colors.white};
     }
   }
 
   p {
-    margin:${props => props.theme.blog.post.content.p.margin};
-    padding:${props => props.theme.blog.post.content.p.padding};
+    margin: ${props => props.theme.blog.post.content.p.margin};
+    padding: ${props => props.theme.blog.post.content.p.padding};
     font-size: ${props => props.theme.p.fontSize};
     line-height: ${props => props.theme.p.lineHeight};
   }
 
-  strong{
+  strong {
     font-weight: bold;
   }
 
-  ul, ol {
-    margin:${props => props.theme.blog.post.content.ul.margin};
-    padding:${props => props.theme.blog.post.content.ul.padding};
-    font-size:${props => props.theme.blog.post.content.ul.fontSize};    
+  ul,
+  ol {
+    margin: ${props => props.theme.blog.post.content.ul.margin};
+    padding: ${props => props.theme.blog.post.content.ul.padding};
+    font-size: ${props => props.theme.blog.post.content.ul.fontSize};
   }
 
   ul {
@@ -89,7 +88,7 @@ const Content = styled.section`
     border-left: 4px solid #00ab6b;
     font-style: italic;
     margin: ${({ theme }) => theme.scale(3)} 0 0;
-    padding: ${({ theme }) => theme.scale(0)} ${({ theme }) => theme.scale(1)};    
+    padding: ${({ theme }) => theme.scale(0)} ${({ theme }) => theme.scale(1)};
     position: relative;
     text-align: left;
     color: ${({ theme }) => theme.colors.lightGray};
@@ -109,7 +108,6 @@ const Author = styled(PostAuthor)`
 `;
 
 class BlogPostRoute extends React.PureComponent {
-
   render() {
     const post = this.props.data.markdownRemark;
     const structuredData = getStructuredData(post);
@@ -135,15 +133,10 @@ class BlogPostRoute extends React.PureComponent {
             <meta name="twitter:description" content={post.excerpt} />
             <meta name="twitter:image" content={`${siteUrl}${withPrefix(post.frontmatter.image.publicURL)}`} />
           </Helmet>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: structuredData }}
-          />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
 
           <header>
-            <H1>
-              {post.frontmatter.title}
-            </H1>
+            <H1>{post.frontmatter.title}</H1>
             <Author author={author} date={post.frontmatter.date} timeToRead={post.timeToRead} showFollow />
             <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
           </header>
@@ -174,14 +167,14 @@ class BlogPostRoute extends React.PureComponent {
 
 BlogPostRoute.propTypes = {
   data: PropTypes.object,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export default BlogPostRoute;
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
-    markdownRemark(fields: {slug: {eq: $path}}) {
+    markdownRemark(fields: { slug: { eq: $path } }) {
       fileAbsolutePath
       html
       excerpt
@@ -191,17 +184,17 @@ export const pageQuery = graphql`
           tag
           link
         }
-        slug        
-      }      
+        slug
+      }
       frontmatter {
         title
         tags
         date
         image {
-          childImageSharp{
-              sizes(maxWidth: 750) {
-                  ...GatsbyImageSharpSizes
-              }
+          childImageSharp {
+            sizes(maxWidth: 750) {
+              ...GatsbyImageSharpSizes
+            }
           }
           publicURL
         }

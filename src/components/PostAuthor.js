@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Grid, Cell } from 'styled-css-grid';
 import Gravatar from 'react-gravatar';
 import Time from '../components/Time';
-import { formatReadingTime } from '../utils/helpers'
+import { formatReadingTime } from '../utils/helpers';
 
 const Wrapper = styled(Grid)`
   font-family: ${props => props.theme.blog.author.fontFamily};

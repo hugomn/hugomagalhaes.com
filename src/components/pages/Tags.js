@@ -48,19 +48,16 @@ const H1 = styled.h1`
   }
 `;
 
-const Tags = (props) => {
+const Tags = props => {
   const allTags = props.data.allMarkdownRemark.group;
 
   return (
     <Layout location={props.location}>
       <Wrapper>
         <FormattedMessage id="tags">
-          {(txt) => (
+          {txt => (
             <Header>
-              <Helmet
-                title={txt}
-                meta={[{ name: 'description', content: txt }]}
-              />
+              <Helmet title={txt} meta={[{ name: 'description', content: txt }]} />
               <H1>
                 <span>{txt}</span>
               </H1>
@@ -69,18 +66,18 @@ const Tags = (props) => {
         </FormattedMessage>
         <Nav>
           <ul>
-            {allTags.map(tag =>
+            {allTags.map(tag => (
               <Li key={tag.fieldValue}>
                 <Link
                   style={{
-                    textDecoration: 'none',
+                    textDecoration: 'none'
                   }}
                   to={`/tags/${kebabCase(tag.fieldValue)}/`}
                 >
                   {tag.fieldValue} ({tag.totalCount})
                 </Link>
               </Li>
-            )}
+            ))}
           </ul>
         </Nav>
       </Wrapper>
@@ -90,8 +87,7 @@ const Tags = (props) => {
 
 Tags.propTypes = {
   data: PropTypes.object,
-  pageContext: PropTypes.object,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export default Tags;

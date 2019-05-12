@@ -10,3 +10,4 @@ public/
 .intermediate-representation/
 .cache/
 package-lock.json
+.history

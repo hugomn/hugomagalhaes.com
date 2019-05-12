@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import PostCardList from '../components/PostCardList';
 import { FormattedMessage } from 'react-intl';
@@ -35,43 +35,28 @@ const TagRoute = ({ data, pageContext, location }) => {
   const { author } = data.site.siteMetadata;
 
   const allTagsLink = (
-    <FormattedMessage id="tags.allTagsLink">
-      {(txt) => (
-        <BtnLink to={`/tags/`}>
-          {txt}
-        </BtnLink>
-      )}
-    </FormattedMessage>
+    <FormattedMessage id="tags.allTagsLink">{txt => <BtnLink to={`/tags/`}>{txt}</BtnLink>}</FormattedMessage>
   );
 
   return (
     <Layout location={location}>
       <Wrapper>
         <FormattedMessage id="tags">
-          {(txt) => (
+          {txt => (
             <Header>
-              <Helmet
-                title={`${pageContext.tag} | ${txt}`}
-                meta={[{ name: 'description', content: txt }]}
-              />
+              <Helmet title={`${pageContext.tag} | ${txt}`} meta={[{ name: 'description', content: txt }]} />
               <H1>
                 <span>
                   <FormattedMessage id="tags.nPostsTaggedWith" values={{ nPosts: data.allMarkdownRemark.totalCount }}>
-                    {(txt) => (
-                      `${txt} "${pageContext.tag}"`
-                    )}
+                    {txt => `${txt} "${pageContext.tag}"`}
                   </FormattedMessage>
                 </span>
               </H1>
             </Header>
           )}
         </FormattedMessage>
-        <PostCardList
-          posts={posts} author={author}
-        />
-        <footer>
-          {allTagsLink}
-        </footer>
+        <PostCardList posts={posts} author={author} />
+        <footer>{allTagsLink}</footer>
       </Wrapper>
     </Layout>
   );
@@ -87,48 +72,42 @@ export default TagRoute;
 
 export const pageQuery = graphql`
   query TagPage($tag: String, $langKey: String) {
-  site {
-    siteMetadata {
-      author {
-        name
-        homeCity
-        email
-        defaultLink
+    site {
+      siteMetadata {
+        author {
+          name
+          homeCity
+          email
+          defaultLink
+        }
       }
     }
-  },
-  allMarkdownRemark(limit: 1000,
-    sort: {fields: [frontmatter___date], order: DESC},
-    filter: {
-      frontmatter: {
-        tags: {in: [$tag]},
-        draft: {ne: true}
-      },
-      fields: {
-        langKey: {eq: $langKey}
-      }
-    }) {
-    totalCount
-    edges {
-      node {
-        frontmatter{
-          title,
-          date,
-          image {
-            childImageSharp{
+    allMarkdownRemark(
+      limit: 1000
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] }, draft: { ne: true } }, fields: { langKey: { eq: $langKey } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            image {
+              childImageSharp {
                 sizes(maxWidth: 750) {
-                    ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpSizes
                 }
+              }
             }
           }
-        },
-        fields{
-          slug
-          langKey
-        },
-        excerpt
+          fields {
+            slug
+            langKey
+          }
+          excerpt
+        }
       }
     }
-  }
   }
 `;

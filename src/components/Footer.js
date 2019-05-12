@@ -7,7 +7,7 @@ import { withPrefix } from 'gatsby';
 import FaHeart from 'react-icons/lib/fa/heart';
 import SelectLanguage from './SelectLanguage';
 import FixedContainer from './FixedContainer';
-import { media, visible } from '../constants/responsive';
+import { media } from '../constants/responsive';
 
 const Wrapper = styled.footer`
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
@@ -51,7 +51,7 @@ const HeartIcon = styled(FaHeart)`
 
 const MiddleCell = styled(Cell)`
   text-align: center;
-  display:none;
+  display: none;
   ${media.md`
     display: inline-flex;
   `};
@@ -78,10 +78,13 @@ const Footer = ({ author, langs, sourceCodeLink, currentLangKey }) => {
         <Grid columns={'repeat(auto-fit,minmax(220px,1fr))'}>
           <LeftCell middle>
             <span>
-              {' Made with '}<HeartIcon />{' and '} 
+              {' Made with '}
+              <HeartIcon />
+              {' and '}
               <a href="https://www.gatsbyjs.org/" target="_blank">
                 <GatsbyIcon src={withPrefix('/img/gatsbyjs.svg')} alt="Gatsby" />
-              </a>{' by '} <span>{author.name}</span>
+              </a>
+              {' by '} <span>{author.name}</span>
             </span>
           </LeftCell>
           <MiddleCell middle>
@@ -90,7 +93,7 @@ const Footer = ({ author, langs, sourceCodeLink, currentLangKey }) => {
             </a>
           </MiddleCell>
           <RightCell middle>
-            <SelectLanguage langs={langs} className="select-languages" /> 
+            <SelectLanguage langs={langs} className="select-languages" />
           </RightCell>
         </Grid>
       </FixedContainer>

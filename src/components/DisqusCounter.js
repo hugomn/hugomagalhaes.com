@@ -9,34 +9,33 @@ export default class DiscusCounter extends Component {
     url: PropTypes.string.isRequired,
     children: PropTypes.element,
     isLink: PropTypes.bool
-  }
+  };
 
   static defaultProps = {
     isLink: false
-  }
+  };
 
-  componentDidMount () {
+  componentDidMount() {
     this._resetComments();
   }
 
-  componentDidUpdate () {
+  componentDidUpdate() {
     this._resetComments();
   }
 
-  _resetComments () {
+  _resetComments() {
     this._addDisqusScript();
     if (typeof DISQUSWIDGETS !== 'undefined') {
-      DISQUSWIDGETS.getCount({ reset: true });
+      window.DISQUSWIDGETS.getCount({ reset: true });
     }
   }
 
-  _addDisqusScript () {
+  _addDisqusScript() {
     if (__scriptAdded) {
       return;
     }
 
-    const parent = document.getElementsByTagName('head')[0] ||
-                 document.getElementsByTagName('body')[0];
+    const parent = document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0];
 
     const script = document.createElement('script');
     script.async = true;
@@ -48,13 +47,10 @@ export default class DiscusCounter extends Component {
     __scriptAdded = true;
   }
 
-  render () {
+  render() {
     let counterElement;
     if (this.props.isLink) {
-      counterElement = React.createElement(
-        'a', { href: this.props.url + '#disqus_thread' },
-        this.props.children
-      );
+      counterElement = React.createElement('a', { href: this.props.url + '#disqus_thread' }, this.props.children);
     } else {
       counterElement = React.createElement(
         'span',
@@ -65,8 +61,6 @@ export default class DiscusCounter extends Component {
         this.props.children
       );
     }
-    return (
-      counterElement
-    );
+    return counterElement;
   }
 }
