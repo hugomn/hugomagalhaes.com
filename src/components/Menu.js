@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MenuIcon from 'react-icons/lib/fa/bars';
+import { FaBars } from 'react-icons/fa';
 import { InvisibleSpan } from './Invisible';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
@@ -185,7 +185,7 @@ class Menu extends React.PureComponent {
       <section>
         <CloseNav isOpen={isOpen} onClick={this.open} />
         <MenuLabel isOpen={isOpen} htmlFor="cb-menu">
-          <MenuIcon />
+          <FaBars />
           <InvisibleSpan>Menu</InvisibleSpan>
           <Checkbox type="checkbox" name="cb-menu" id="cb-menu"
             checked={this.state.isOpen}

@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Gravatar from 'react-gravatar';
 import { Grid, Cell } from 'styled-css-grid';
-import FacebookIcon from 'react-icons/lib/fa/facebook';
-import TwitterIcon from 'react-icons/lib/fa/twitter';
-import LinkedinIcon from 'react-icons/lib/fa/linkedin-square';
-import InstagramIcon from 'react-icons/lib/fa/instagram';
-import DribbleIcon from 'react-icons/lib/fa/dribbble';
-import GithubIcon from 'react-icons/lib/fa/github';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaDribbble, FaGithub } from 'react-icons/fa';
 import { media } from '../constants/responsive';
 
 
@@ -84,32 +79,32 @@ const Welcome = ({ author, className }) => {
         <SocialLinks>
           <li>
             <A href="https://facebook.hugomagalhaes.com" target="_blank" rel="noreferrer noopener">
-              <FacebookIcon />
+              <FaFacebook />
             </A>
           </li>
           <li>
             <A href="https://twitter.hugomagalhaes.com" target="_blank" rel="noreferrer noopener">
-              <TwitterIcon />
+              <FaTwitter />
             </A>
           </li>
           <li>
             <A href="https://linkedin.hugomagalhaes.com" target="_blank" rel="noreferrer noopener">
-              <LinkedinIcon />
+              <FaLinkedin />
             </A>
           </li>
           <li>
             <A href="https://instagram.hugomagalhaes.com" target="_blank" rel="noreferrer noopener">
-              <InstagramIcon />
+              <FaInstagram />
             </A>
           </li>
           <li>
             <A href="https://dribbble.hugomagalhaes.com" target="_blank" rel="noreferrer noopener">
-              <DribbleIcon />
+              <FaDribbble />
             </A>
           </li>
           <li>
             <A href="https://github.hugomagalhaes.com" target="_blank" rel="noreferrer noopener">
-              <GithubIcon />
+              <FaGithub />
             </A>
           </li>
         </SocialLinks>

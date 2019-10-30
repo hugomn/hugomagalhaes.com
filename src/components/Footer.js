@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FaGithub from 'react-icons/lib/fa/github';
+import { FaGithub, FaHeart } from 'react-icons/fa';
 import styled, { keyframes } from 'styled-components';
 import { Grid, Cell } from 'styled-css-grid';
 import { withPrefix } from 'gatsby';
-import FaHeart from 'react-icons/lib/fa/heart';
 import SelectLanguage from './SelectLanguage';
 import FixedContainer from './FixedContainer';
 import { media } from '../constants/responsive';

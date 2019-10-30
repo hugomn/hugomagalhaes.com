@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FacebookIcon from 'react-icons/lib/fa/facebook';
-import TwitterIcon from 'react-icons/lib/fa/twitter';
-import GoogleIcon from 'react-icons/lib/fa/google-plus';
-import LinkedinIcon from 'react-icons/lib/fa/linkedin-square';
+import { FaFacebook, FaGoogle, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import styled from 'styled-components';
 import { visible } from '../constants/responsive'; 
 import links from '../constants/socialLinks';
@@ -63,7 +60,7 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
             rel="noreferrer noopener"
             aria-label="Share on twitter"
             title="Share on twitter">
-            <TwitterIcon />
+            <FaTwitter />
           </A>
         </li>
         <li>
@@ -71,7 +68,7 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
             rel="noreferrer noopener"
             aria-label="Share on facebook"
             title="Share on facebook">
-            <FacebookIcon />
+            <FaFacebook />
           </A>
         </li>
         <li>
@@ -79,7 +76,7 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
             rel="noreferrer noopener"
             aria-label="Share on Linkedin"
             title="Share on Linkedin">
-            <LinkedinIcon />
+            <FaLinkedin />
           </A>
         </li>
         <li>
@@ -87,7 +84,7 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
             rel="noreferrer noopener"
             aria-label="Share on Google+"
             title="Share on Google+">
-            <GoogleIcon />
+            <FaGoogle />
           </A>
         </li>
         <DisqusContainer>

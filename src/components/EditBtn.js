@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import FaEdit from 'react-icons/lib/fa/edit';
+import { FaEdit }  from 'react-icons/fa';
 
 const A = styled.a`
   display: block;
