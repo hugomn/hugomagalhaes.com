@@ -108,7 +108,10 @@ const BioWrapper = styled(Cell)`
 `;
 
 const BioContainer = styled.div`
-  padding: 0 45px;
+  padding: 0px;
+  ${media.md`
+    padding: 0 45px;
+  `}
 `;
 
 const PictureContainer = styled(Cell)`
@@ -175,10 +178,11 @@ const Bio = styled.div`
   display: block;
   font-size: 0.9rem;
   br { display: none; }
+  padding: 0 35px;
   ${media.md`
     br { display: block; }
     font-size: 0.9375rem;
-    padding-right: 120px;
+    padding: 0 120px 0 0;
   `}
 `;
 

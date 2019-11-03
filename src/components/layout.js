@@ -61,7 +61,8 @@ const Layout = (props) => {
             url={url}
             menu={menu}
           />
-          {isHome && <Welcome author={author} langKey={langKey} />}
+          {url === '/' && <Welcome author={author} langKey={langKey} />}
+          {/* {isHome && <Welcome author={author} langKey={langKey} />} */}
           <Container>
             <main>
               {children}
