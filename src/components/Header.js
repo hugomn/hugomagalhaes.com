@@ -4,18 +4,8 @@ import Menu from './Menu';
 import styled from 'styled-components';
 import FixedContainer from './FixedContainer';
 import throttle from 'lodash.throttle';
-
-const Wrapper = styled.header`
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 4px 12px 0 rgba(0,0,0,.05) !important;
-  transition: top 0.4s ease-in-out;
-  height: 64px;
-  top: ${props => props.hidden ? '-64px' : 0};
-  box-sizing: border-box;
-  position: fixed;
-  width: 100%;
-  z-index: 9; 
-`;
+import SelectLanguage from './SelectLanguage';
+import { Grid, Cell } from 'styled-css-grid';
 
 const delta = 5;
 const navbarHeight = 64;
@@ -24,6 +14,7 @@ class Header extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log('[dev:hugo] props', props);
     this.state = {
       didScroll: true,
       lastScrollTop: 0,
@@ -82,18 +73,47 @@ class Header extends React.Component {
   };
 
   render() {
-    const { menu, url } = this.props;
+    const { langs, menu, url } = this.props;
     return (
       <Wrapper hidden={this.state.hidden}>
         <FixedContainer>
-          <Menu menu={menu} url={url} />
+          <Grid columns={'1fr 140px'}>
+            <MenuContainer>
+              <Menu menu={menu} url={url} />
+            </MenuContainer>
+            <LanguageContainer>
+              <SelectLanguage langs={langs} className="select-languages" />
+            </LanguageContainer>
+          </Grid>
         </FixedContainer>
       </Wrapper>
     );
   } 
 };
 
+const Wrapper = styled.header`
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,.05) !important;
+  border-top: 4px solid ${props => props.theme.colors.brand};
+  transition: top 0.4s ease-in-out;
+  height: ${props => props.theme.header.height}px;
+  top: ${props => props.hidden ? `-${props.theme.header.height}px` : 0};
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  z-index: 9; 
+`;
+
+const MenuContainer = styled(Cell)`
+
+`;
+
+const LanguageContainer = styled(Cell)`
+  text-align: right;
+`;
+
 Header.propTypes = {
+  langs: PropTypes.array,
   menu: PropTypes.array.isRequired,
   url: PropTypes.string
 };

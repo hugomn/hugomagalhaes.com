@@ -85,13 +85,13 @@ const Content = styled.section`
   }
 
   blockquote {
-    border-left: 4px solid #00ab6b;
+    border-left: 4px solid ${({ theme }) => theme.colors.brand};
     font-style: italic;
     margin: ${({ theme }) => theme.scale(3)} 0 0;
     padding: ${({ theme }) => theme.scale(0)} ${({ theme }) => theme.scale(1)};
     position: relative;
     text-align: left;
-    color: ${({ theme }) => theme.colors.lightGray};
+    color: ${({ theme }) => theme.colors.darkColors[0]};
   }
 
   blockquote > p:first-child {

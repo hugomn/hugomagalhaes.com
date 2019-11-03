@@ -1,49 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Br from './flags/Br';
-import Us from './flags/Us';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-const Nav = styled.nav`
-`;
-
-const Ul = styled.ul`
-`;
-
-const Li = styled.li`
-  display: inline-block;
-  padding: ${props => props.theme.i18n.selectLanguage.li.padding};
-  margin: ${props => props.theme.i18n.selectLanguage.li.margin};
-  font-size: ${props => props.theme.i18n.selectLanguage.li.fontSize};
-  cursor: pointer;
-  border-radius: ${props => props.theme.i18n.selectLanguage.li.borderRadius};
-  transition: 0.3s;
-  background-color: ${props => props.selected
-    ? props.theme.i18n.selectLanguage.li.selected.backgroundColor
-    : `transparent`};
-
-  &:hover{
-    background-color: ${props => props.theme.i18n.selectLanguage.li.selected.backgroundColor};
-    transition: 0.3s;
-  }
-`;
-
-const getIcon = langKey => {
-  switch (langKey) {
-    case 'en': return <Us />;
-    case 'pt': return <Br />;
-    default: return null;
-  }
-};
-
 const SelectLanguage = (props) => {
-  const links = props.langs.map(lang =>
-    <Link key={lang.langKey} to={lang.link}>
-      <Li selected={lang.selected}>
-        {getIcon(lang.langKey)}
-      </Li>
-    </Link>
+  const links = props.langs.map(({langKey, link, selected}) =>
+    <Li>
+      <LangLink key={langKey} to={link} selected={selected}>
+        {langKey}
+      </LangLink>
+    </Li>
   );
 
   return (
@@ -54,6 +20,37 @@ const SelectLanguage = (props) => {
     </Nav>
   );
 };
+
+const Nav = styled.nav`
+  padding: ${props => props.theme.i18n.selectLanguage.padding};
+`;
+
+const Ul = styled.ul`
+`;
+
+const LangLink = styled(Link)`
+  font-size: ${props => props.theme.i18n.selectLanguage.li.fontSize};
+  font-weight: ${props => props.theme.i18n.selectLanguage.li.fontWeight};
+  text-transform: uppercase;
+  padding: ${props => props.theme.i18n.selectLanguage.li.padding};
+  color: ${props => props.selected
+    ? props.theme.colors.darkColors[3]
+    : props.theme.colors.black};
+  &:hover {
+    text-decoration: none;
+    color: ${props => props.selected
+    ? props.theme.colors.darkColors[3]
+    : props => props.theme.menu.desktop.a.active.color};
+  }
+`;
+
+const Li = styled.li`
+  &:nth-child(n+2):before {
+    content: "/";
+    color: ${props => props.theme.colors.darkColors[3]};
+  }
+  display: inline-block;
+`;
 
 SelectLanguage.propTypes = {
   langs: PropTypes.array

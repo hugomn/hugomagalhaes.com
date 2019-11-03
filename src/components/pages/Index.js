@@ -1,32 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Welcome from '../Welcome';
 import Layout from '../layout';
 import PostCardList from '../PostCardList';
 import { FormattedMessage } from 'react-intl';
 import BtnLink from '../BtnLink';
 import styled from 'styled-components';
-
-const FeaturedContainer = styled.section`
-  margin: ${props => props.theme.blog.list.margin};
-`;
-
-const AllStoriesContainer = styled.section`
-  margin: ${props => props.theme.blog.list.margin};
-`;
-
-const H2 = styled.h2`
-  font-size: 1.4rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  margin-bottom: 27px;
-  padding-top: 25px;
-  span {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
-    display: inline-block;
-    padding-bottom: 20px;
-    margin-bottom: -1px;
-  }
-`;
+import { media } from '../../constants/responsive';
 
 const Index = (props) => {
   const allStoriesPosts = props.data.all.edges.map(p => p.node);
@@ -36,8 +15,7 @@ const Index = (props) => {
 
   return (
     <Layout location={props.location}>
-      <div>
-        <Welcome author={author} />
+      <Wrapper>
         <FeaturedContainer>
           <H2>
             <FormattedMessage id="index.featured">
@@ -65,10 +43,37 @@ const Index = (props) => {
             )}
           </FormattedMessage>
         </AllStoriesContainer>
-      </div>
+      </Wrapper>
     </Layout>
   );
 };
+
+const Wrapper = styled.div`
+    ${media.md`
+        padding: 0 45px;
+    `}
+`;
+
+const FeaturedContainer = styled.section`
+  margin: ${props => props.theme.blog.list.margin};
+`;
+
+const AllStoriesContainer = styled.section`
+  margin: ${props => props.theme.blog.list.margin};
+`;
+
+const H2 = styled.h2`
+  font-size: 1.4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 27px;
+  padding-top: 25px;
+  span {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+    display: inline-block;
+    padding-bottom: 20px;
+    margin-bottom: -1px;
+  }
+`;
 
 Index.propTypes = {
   data: PropTypes.object.isRequired,

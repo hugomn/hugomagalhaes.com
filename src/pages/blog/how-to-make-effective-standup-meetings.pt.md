@@ -2,7 +2,7 @@
 title: "Como fazer standup meetings efetivas"
 date: "2019-07-06"
 layout: post
-draft: false
+draft: true
 featured: true
 tags:
   - liderança

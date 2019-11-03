@@ -5,6 +5,7 @@
   "author": "Hugo Nogueira <hugomn@gmail.com>",
   "dependencies": {
     "gatsby": "2.17.7",
+    "gatsby-plugin-google-fonts": "1.0.1",
     "gatsby-remark-figure-caption": "^2.0.0",
     "lodash.throttle": "^4.1.1",
     "prismjs": "1.17.1",
@@ -85,6 +86,6 @@
     "react-intl": "3.4.0",
     "react-test-renderer": "16.11.0",
     "regenerator-runtime": "0.13.3",
-    "styled-components": "4.4.0"
+    "styled-components": "4.4.1"
   }
 }

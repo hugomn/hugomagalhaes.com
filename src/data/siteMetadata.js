@@ -5,7 +5,7 @@ module.exports = {
   description: 'Senior software engineer and agile manager. React, and Node.js enthusiast. Engineering Lead @ BCG Digital Ventures. Berlin, Germany',
   author: {
     name: 'Hugo Nogueira',
-    bio: 'Senior software engineer and agile manager. React, and Node.js enthusiast. <br/> Engineering Lead @ <a href="https://www.bcgdv.com">BCG Digital Ventures</a>. Berlin, Germany',
+    bio: 'I\'m an engineering lead at <a href="https://www.bcgdv.com"><b>BCG Digital Ventures</b></a>. We invent, build and invest in startups with the world\'s most influential companies. I build high-performance products and teams.  I\'m a software engineer with 12+ years of experience and I\'ve been managing technology teams in the last 8 years.',
     homeCity: 'Berlin',
     email: 'hugomn@gmail.com',
     twitter: 'hugomn',

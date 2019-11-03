@@ -4,9 +4,86 @@ import { FaBars } from 'react-icons/fa';
 import { InvisibleSpan } from './Invisible';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { endsWith } from 'ramda';
+import { equals } from 'ramda';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import { hidden, media } from '../constants/responsive';
+
+class Menu extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false
+    };
+  }
+
+  open = (event) => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
+  getMenuItems = (isSelected, menu, langKey) => {
+    return menu.map(item => {
+      const slug = `${langKey !== 'en' ? langKey : ''}${item.slug}`;
+
+      const subItems = item.items
+        ? (
+          <ul style={{ display: 'none' }}>
+            {this.getMenuItems(isSelected, item.items, langKey)}
+          </ul>)
+        : null;
+
+      return (
+        <li key={item.slug}>
+          <FormattedMessage id={item.label}>
+            {(label) =>
+              item.link
+                ? (
+                  <MenuA target="_blank" href={item.link}>
+                    {label}
+                  </MenuA>
+                )
+                : (
+                  <MenuLink selected={isSelected(slug)} to={slug} onClick={this.open}>
+                    {label}
+                  </MenuLink>
+                )
+            }
+          </FormattedMessage>
+          {subItems}
+        </li>
+      );
+    });
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const isSelected = equals(this.props.url);
+    const menuItems = this.getMenuItems(isSelected, this.props.menu, this.props.intl.locale);
+
+    return (
+      <section>
+        <CloseNav isOpen={isOpen} onClick={this.open} />
+        <MenuLabel isOpen={isOpen} htmlFor="cb-menu">
+          <FaBars />
+          <InvisibleSpan>Menu</InvisibleSpan>
+          <Checkbox type="checkbox" name="cb-menu" id="cb-menu"
+            checked={this.state.isOpen}
+            onChange={this.open}
+          />
+        </MenuLabel>
+        <Nav isOpen={isOpen}>
+          <FixedContainer>
+            <Ul isOpen={isOpen}>
+              {menuItems}
+            </Ul>
+          </FixedContainer>
+        </Nav>
+      </section>
+    );
+  }
+};
 
 const CloseNav = styled.section`
   ${hidden.md}
@@ -56,11 +133,11 @@ const MenuLabel = styled.label`
   float: left;
   cursor: pointer;
   color: ${props => props.theme.colors.dark};
-  margin: 0.8rem 1.5rem;
+  margin: 1.6rem 1.8rem;
   transition: color 0.4s;
   font-size: ${props => props.theme.menu.mobile.label.fontSize};
   &:hover {
-    color: ${props => props.theme.colors.darkGreen};
+    color: ${props => props.theme.colors.brand};
     transition: color 0.4s;
   }
 `;
@@ -76,7 +153,7 @@ const Checkbox = styled.input`
   height: 100%;
 `;
 
-const MenuLink = styled(Link)`
+export const MenuLink = styled(Link)`
     font-size: ${props => props.theme.menu.mobile.a.fontSize};
     font-family: ${props => props.theme.menu.mobile.a.fontFamily};
     padding: ${props => props.theme.menu.mobile.a.padding};
@@ -88,12 +165,14 @@ const MenuLink = styled(Link)`
     &:hover {
       color: ${props => props.theme.menu.mobile.a.active.color};
       transition: 0.5s;
+      text-decoration: none;
     }
     ${media.md`
       display: inline;
       font-size: ${props => props.theme.menu.desktop.a.fontSize};
       font-family: ${props => props.theme.menu.desktop.a.fontFamily};
       font-weight: ${props => props.theme.menu.desktop.a.fontWeight};
+      text-transform: uppercase;
       padding: ${props => props.theme.menu.desktop.a.padding};
       color: ${props => props.selected ? props.theme.menu.desktop.a.active.color : props.theme.menu.desktop.a.color};
       &:hover {
@@ -123,86 +202,9 @@ const FixedContainer = styled.div`
   ${media.md`
     width: ${props => props.theme.maxWidth};
     margin: 0 auto;
-    text-align: right;
+    text-align: ${props => props.theme.menu.desktop.a.textAlign};;
   `}
 `;
-
-class Menu extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false
-    };
-  }
-
-  open = (event) => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
-  getMenuItems = (isSelected, menu, langKey) => {
-    return menu.map(item => {
-      const slug = `/${langKey !== 'en' ? langKey : ''}${item.slug}`;
-
-      const subItems = item.items
-        ? (
-          <ul style={{ display: 'none' }}>
-            {this.getMenuItems(isSelected, item.items, langKey)}
-          </ul>)
-        : null;
-
-      return (
-        <li key={item.slug}>
-          <FormattedMessage id={item.label}>
-            {(label) =>
-              item.link
-                ? (
-                  <MenuA target="_blank" href={item.link}>
-                    {label}
-                  </MenuA>
-                )
-                : (
-                  <MenuLink selected={isSelected(slug)} to={slug} onClick={this.open}>
-                    {label}
-                  </MenuLink>
-                )
-            }
-          </FormattedMessage>
-          {subItems}
-        </li>
-      );
-    });
-  }
-
-  render() {
-    const { isOpen } = this.state;
-    const isSelected = endsWith(this.props.url);
-    const menuItems = this.getMenuItems(isSelected, this.props.menu, this.props.intl.locale);
-
-    return (
-      <section>
-        <CloseNav isOpen={isOpen} onClick={this.open} />
-        <MenuLabel isOpen={isOpen} htmlFor="cb-menu">
-          <FaBars />
-          <InvisibleSpan>Menu</InvisibleSpan>
-          <Checkbox type="checkbox" name="cb-menu" id="cb-menu"
-            checked={this.state.isOpen}
-            onChange={this.open}
-          />
-        </MenuLabel>
-        <Nav isOpen={isOpen}>
-          <FixedContainer>
-            <Ul isOpen={isOpen}>
-              {menuItems}
-            </Ul>
-          </FixedContainer>
-        </Nav>
-      </section>
-    );
-  }
-};
 
 Menu.propTypes = {
   menu: PropTypes.array.isRequired,

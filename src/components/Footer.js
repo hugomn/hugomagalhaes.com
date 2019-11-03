@@ -4,9 +4,35 @@ import { FaGithub, FaHeart } from 'react-icons/fa';
 import styled, { keyframes } from 'styled-components';
 import { Grid, Cell } from 'styled-css-grid';
 import { withPrefix } from 'gatsby';
-import SelectLanguage from './SelectLanguage';
 import FixedContainer from './FixedContainer';
 import { media } from '../constants/responsive';
+
+const Footer = ({ author, langs, sourceCodeLink, currentLangKey }) => {
+  return (
+    <Wrapper>
+      <FixedContainer>
+        <Grid columns={'repeat(auto-fit,minmax(220px,1fr))'}>
+          <LeftCell middle>
+            <span>
+              {' Made with '}
+              <HeartIcon />
+              {' and '}
+              <a href="https://www.gatsbyjs.org/" target="_blank">
+                <GatsbyIcon src={withPrefix('/img/gatsbyjs.svg')} alt="Gatsby" />
+              </a>
+              {' by '} <span>{author.name}</span>
+            </span>
+          </LeftCell>
+          <MiddleCell middle>
+            <a href={sourceCodeLink} target="_blank">
+              <GithubIcon />
+            </a>
+          </MiddleCell>
+        </Grid>
+      </FixedContainer>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.footer`
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
@@ -36,6 +62,9 @@ const GithubIcon = styled(FaGithub)`
   margin: auto;
   opacity: 0.7;
   padding: 0 ${({ theme }) => theme.scale(-6)} 0 0;
+  :hover {
+    color: ${props => props.theme.colors.brand}!important;
+  }
 `;
 
 const HeartIcon = styled(FaHeart)`
@@ -49,9 +78,10 @@ const HeartIcon = styled(FaHeart)`
 `;
 
 const MiddleCell = styled(Cell)`
-  text-align: center;
+  text-align: right;
   display: none;
   ${media.md`
+    text-align: right;
     display: inline-flex;
   `};
 `;
@@ -62,43 +92,6 @@ const LeftCell = styled(Cell)`
     text-align: left;
   `};
 `;
-
-const RightCell = styled(Cell)`
-  text-align: center;
-  ${media.sm`
-    text-align: right;
-  `};
-`;
-
-const Footer = ({ author, langs, sourceCodeLink, currentLangKey }) => {
-  return (
-    <Wrapper>
-      <FixedContainer>
-        <Grid columns={'repeat(auto-fit,minmax(220px,1fr))'}>
-          <LeftCell middle>
-            <span>
-              {' Made with '}
-              <HeartIcon />
-              {' and '}
-              <a href="https://www.gatsbyjs.org/" target="_blank">
-                <GatsbyIcon src={withPrefix('/img/gatsbyjs.svg')} alt="Gatsby" />
-              </a>
-              {' by '} <span>{author.name}</span>
-            </span>
-          </LeftCell>
-          <MiddleCell middle>
-            <a href={sourceCodeLink} target="_blank">
-              <GithubIcon />
-            </a>
-          </MiddleCell>
-          <RightCell middle>
-            <SelectLanguage langs={langs} className="select-languages" />
-          </RightCell>
-        </Grid>
-      </FixedContainer>
-    </Wrapper>
-  );
-};
 
 Footer.propTypes = {
   author: PropTypes.object.isRequired,

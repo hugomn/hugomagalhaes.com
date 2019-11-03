@@ -3,19 +3,26 @@ import * as fonts from '../constants/fonts';
 const round = (x, n) => Math.round(x * (n * 10)) / (n * 10);
 const scaleN = (n) => round(Math.pow(1.2, n), 3);
 const scale = n => `${scaleN(n)}rem`;
+const headerHeight = 84;
+
+const brandColor = '#456EF6';
+const accentColors = ['#AEC0FB', '#F4F6FE', '#F2BE3B'];
+const darkColors = ['#333E49', '#435365', '#747474', '#B2B2B2'];
+const lightColors = ['#FFFFFF', '#FAFAFA', '#EFEFEF', '#D7D7D7'];
 
 const colors = {
+  brand: brandColor,
+  accentColors,
   white: '#FFFFFF',
-  black: '#212529', 
+  black: '#454545', 
+  darkColors,
+  lightColors,
   red: '#FF0000',
   darkBlue: '#587B7F',
   blue: '#85B9BF',
   green: '#00ab6b',
   darkGreen: '#038252',
   lightGreen: '#00ab6b2e',
-  gray: '#343a40',
-  darkGray: '#1d2124',
-  lightGray: 'rgba(0, 0, 0, 0.44)',
 
   blackShades: [
     '#393E41',
@@ -29,8 +36,8 @@ const theme = {
   fonts,
   color: colors.black,
   bg: colors.white,
-  padding: `4rem ${scaleN(1)}rem ${scaleN(4)}rem ${scaleN(0)}rem`,
-  margin: '0 auto',
+  padding: `${scaleN(1)}rem ${scaleN(1)}rem ${scaleN(1)}rem ${scaleN(0)}rem`,
+  margin: `0 auto`,
   maxWidth: '71.25rem',
   borderRadius: '0.2rem',
   lineHeight: 1.5,
@@ -42,14 +49,15 @@ const theme = {
     lineHeight: 1.58,
   },
   a: {
-    color: colors.green,
+    color: colors.brand,
     textDecoration: 'none',
     hover: {
-      color: colors.darkGreen
+      color: colors.accentColors[0],
+      textDecoration: 'underline'
     }
   },
   header: {
-    height: 64,
+    height: headerHeight,
     title: {
       fontSize: scale(3),
       textAlign: 'left',
@@ -100,7 +108,7 @@ const theme = {
         textAlign: 'left',
         color: colors.white,
         active: {
-          color: colors.green
+          color: colors.brand
         }
       },
       ul: {
@@ -108,20 +116,20 @@ const theme = {
       }
     },
     desktop: {
-      padding: `${scale(2.2)} 0`,
+      padding: `${scale(3.5)} ${scale(3)}`,
       bg: 'transparent',
       a: {
-        fontFamily: fonts.System,
+        fontFamily: fonts.SansSerif,
         fontSize: scale(-0.5),
-        fontWeight: 400,
+        fontWeight: 500,
         padding: `${scale(1)} ${scale(-0.4)}`,
         textAlign: 'left',
-        color: colors.lightGray,
+        color: colors.black,
         active: {
-          color: colors.darkGreen
+          color: colors.brand
         },
         hover: {
-          color: colors.darkGreen
+          color: colors.brand
         }
       },
       ul: {
@@ -138,13 +146,14 @@ const theme = {
       margin: `0 0 ${scale(0)}`,
       padding: `0`,
       hover: {
-        color: colors.green
+        color: colors.brand
       }
     }
   },
   welcome: {
-    marginTop: scale(6),
-    marginBottom: scale(2),
+    margin: 0,
+    padding: `${scale(0)} 0`,
+    backgroundColor: colors.accentColors[1]
   },
   h1: {
     fontSize: scale(5.8),
@@ -178,11 +187,11 @@ const theme = {
   },
   blog: {
     author: {
-      fontFamily: fonts.System,
+      fontFamily: fonts.SansSerif,
       fontSize: scale(-0.7),
       lineHeight: scaleN(2),
       time: {
-        color: colors.lightGray
+        color: colors.darkColors[3]
       }
     },
     list: {
@@ -207,15 +216,15 @@ const theme = {
           fontSize: scale(1.2),
           lineHeight: scaleN(1),
           margin: `0 0 ${scale(-0.8)}`,
-          color: colors.gray,
+          color: colors.black,
           hover: {
-            color: colors.darkGray
+            color: colors.brand
           }
         },
         text: {
-          fontFamily: fonts.System,
+          fontFamily: fonts.SansSerif,
           fontSize: scale(-0.3),
-          color: colors.lightGray,
+          color: colors.black,
           lineHeight: scaleN(2),
           padding: `0`,
           margin: `0`,
@@ -224,7 +233,7 @@ const theme = {
     },
     post: {
       padding: '20px',
-      margin: `${scale(4)} auto 0`,
+      margin: `${scale(-2)} auto 0`,
       maxWidth: '46.25rem',
       header: {
         fontFamily: fonts.SansSerif,
@@ -239,7 +248,7 @@ const theme = {
           borderRadius: '0.2rem',
           margin: `0`,
           padding: `${scale(-8)} ${scale(-4)}`,
-          backgroundColor: colors.gray,
+          backgroundColor: colors.darkColors[1],
         },
         highlight: {
           backgroundColor: null,
@@ -286,10 +295,12 @@ const theme = {
   },
   i18n: {
     selectLanguage: {
+      padding: `${scale(3.5)} ${scale(2)}`,
       li: {
         margin: `0 0 0 5px`,
         padding: `${scale(-8)} ${scale(-2)} ${scale(-5)} ${scale(-2)}`,
-        fontSize: scale(3),
+        fontSize: scale(-1.5),
+        fontWeight: 500,
         borderRadius: '0.2rem',
         selected: {
           backgroundColor: colors.lightGreen

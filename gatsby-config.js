@@ -106,6 +106,16 @@ module.exports = {
         prefixDefault: false
       }
     },
-    'gatsby-plugin-styled-components'
+    'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `Poppins:300,400,500,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    }
   ],
 };

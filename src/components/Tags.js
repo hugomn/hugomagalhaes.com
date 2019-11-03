@@ -29,7 +29,9 @@ const A = styled(Link)`
   transition: 0.3s;
   padding: ${({theme}) => theme.scale(-2)} ${({theme}) => theme.scale(-2)};
   &:hover {
-      color: ${({theme}) => theme.colors.green};
+      background: ${({theme}) => theme.colors.brand};
+      text-decoration: none;
+      color: ${({theme}) => theme.colors.white};
       transition: 0.3s;
   }
 `;

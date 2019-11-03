@@ -3,7 +3,7 @@ title: "My first exit: what I've learned in 8 years leading meuingresso.com"
 date: "2019-01-16"
 layout: post
 draft: false
-featured: false
+featured: true
 tags:
   - personal
   - entrepreneurship

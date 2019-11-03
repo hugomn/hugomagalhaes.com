@@ -11,19 +11,15 @@ import pt from '../data/messages/pt';
 import theme from '../themes/theme';
 import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n';
 import Helmet from 'react-helmet';
+import Welcome from './Welcome';
 
 const messages = { en, pt };
-
-const Container = styled(FixedContainer)`
-  padding: ${props => props.theme.padding};
-  margin: ${props => props.theme.margin};
-`;
 
 const Layout = (props) => {
   const { children, location } = props;
   const url = location.pathname;
-  const isHome = isHomePage(url);
   const { langs, defaultLangKey } = props.data.site.siteMetadata.languages;
+  const isHome = isHomePage(url, false, langs);
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
   const homeLink = `/${langKey !== 'en' ? langKey : ''}`;
   const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, '/') }));
@@ -61,9 +57,11 @@ const Layout = (props) => {
           <Header
             isHome={isHome}
             homeLink={homeLink}
+            langs={langsMenu}
             url={url}
             menu={menu}
           />
+          {isHome && <Welcome author={author} langKey={langKey} />}
           <Container>
             <main>
               {children}
@@ -81,6 +79,25 @@ const Layout = (props) => {
   );
 };
 
+const BodyContainer = styled.div`
+  font-family: ${props => props.theme.fonts.SansSerif};
+  color: ${props => props.theme.color};
+  background-color: ${props => props.theme.bg};
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-feature-settings: "calt" 1, "clig" 1, "dlig" 1, "kern" 1, "liga" 1, "salt" 1;
+  padding-top: ${props => props.theme.header.height}px;
+`;
+
+const Container = styled(FixedContainer)`
+  padding: ${props => props.theme.padding};
+  margin: ${props => props.theme.margin};
+`;
+
 const GlobalStyle = createGlobalStyle`
   a {
     color: ${props => props.theme.a.color};
@@ -89,6 +106,7 @@ const GlobalStyle = createGlobalStyle`
     :hover {
       transition: all 0.2s;
       color: ${props => props.theme.a.hover.color};
+      text-decoration: ${props => props.theme.a.hover.textDecoration};
     }
   }
   b, strong {
@@ -143,6 +161,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 75%;
     vertical-align: super;
   }
+  ::selection {
+    background: ${({theme}) => theme.colors.accentColors[0]};
+  }
+  ::-moz-selection {
+    background: ${({theme}) => theme.colors.accentColors[0]};
+  }
   .footnotes {
     ol, p {
       font-size: 14px !important;
@@ -157,19 +181,6 @@ const GlobalStyle = createGlobalStyle`
   .giphy-embed {
     margin-top: 2rem;
   }
-`;
-
-const BodyContainer = styled.div`
-  font-family: ${props => props.theme.fonts.System};
-  color: ${props => props.theme.color};
-  background-color: ${props => props.theme.bg};
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  min-height: 100%;
-  overflow-x: hidden;
-  font-feature-settings: "calt" 1, "clig" 1, "dlig" 1, "kern" 1, "liga" 1, "salt" 1;
 `;
 
 export default props => (
