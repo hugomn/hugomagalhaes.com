@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Grid, Cell } from 'styled-css-grid';
 import Img from 'gatsby-image';
 import Author from './PostAuthor';
-import { media } from '../constants/responsive';
+import { media, visible } from '../constants/responsive';
 
 const PostCard = ({ post, author, imageOnTop }) => {
   return (
@@ -98,6 +98,7 @@ const Text = styled.p`
 `;
 
 const Label = styled.div`
+  ${visible.md}
   position: absolute;
   right: 18px;
   bottom: 18px;
