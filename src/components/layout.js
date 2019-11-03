@@ -61,7 +61,7 @@ const Layout = (props) => {
             url={url}
             menu={menu}
           />
-          {url === '/' && <Welcome author={author} langKey={langKey} />}
+          {(url === '/' || url === '/pt/') && <Welcome author={author} langKey={langKey} />}
           {/* {isHome && <Welcome author={author} langKey={langKey} />} */}
           <Container>
             <main>
