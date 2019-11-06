@@ -42,6 +42,7 @@ const Layout = props => {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={`${siteUrl}${withPrefix(url)}`} />
                 <meta property="og:image" content={`${siteUrl}${withPrefix('/meta.jpg')}`} />
+                <meta property="fb:app_id" content="2528326990770132" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={txt} />
                 <meta name="twitter:description" content={description} />
