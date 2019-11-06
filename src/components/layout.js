@@ -15,35 +15,32 @@ import Welcome from './Welcome';
 
 const messages = { en, pt };
 
-const Layout = (props) => {
+const Layout = props => {
   const { children, location } = props;
   const url = location.pathname;
   const { langs, defaultLangKey } = props.data.site.siteMetadata.languages;
   const isHome = isHomePage(url, false, langs);
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
   const homeLink = `/${langKey !== 'en' ? langKey : ''}`;
-  const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, '/') }));
+  const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map(item => ({
+    ...item,
+    link: item.link.replace(`/${defaultLangKey}/`, '/')
+  }));
   const { menu, author, sourceCodeLink, siteUrl, description } = props.data.site.siteMetadata;
 
   return (
     <ThemeProvider theme={theme}>
-      <IntlProvider
-        locale={langKey}
-        messages={messages[langKey]}
-      >
+      <IntlProvider locale={langKey} messages={messages[langKey]}>
         <BodyContainer>
           <FormattedMessage id="title">
-            {(txt) => (
-              <Helmet
-                defaultTitle={txt}
-                titleTemplate={`%s | ${txt}`}
-              >
+            {txt => (
+              <Helmet defaultTitle={txt} titleTemplate={`%s | ${txt}`}>
                 <meta name="author" content={author.name} />
                 <meta name="description" content={description} />
                 <meta property="og:title" content={txt} />
                 <meta property="og:description" content={description} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content={url} />
+                <meta property="og:url" content={`${siteUrl}${withPrefix(url)}`} />
                 <meta property="og:image" content={`${siteUrl}${withPrefix('/meta.jpg')}`} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={txt} />
@@ -54,25 +51,13 @@ const Layout = (props) => {
               </Helmet>
             )}
           </FormattedMessage>
-          <Header
-            isHome={isHome}
-            homeLink={homeLink}
-            langs={langsMenu}
-            url={url}
-            menu={menu}
-          />
+          <Header isHome={isHome} homeLink={homeLink} langs={langsMenu} url={url} menu={menu} />
           {(url === '/' || url === '/pt/') && <Welcome author={author} langKey={langKey} />}
           {/* {isHome && <Welcome author={author} langKey={langKey} />} */}
           <Container>
-            <main>
-              {children}
-            </main>
+            <main>{children}</main>
           </Container>
-          <Footer
-            author={author}
-            langs={langsMenu}
-            sourceCodeLink={sourceCodeLink}
-          />
+          <Footer author={author} langs={langsMenu} sourceCodeLink={sourceCodeLink} />
           <GlobalStyle />
         </BodyContainer>
       </IntlProvider>
@@ -90,7 +75,7 @@ const BodyContainer = styled.div`
   bottom: 0;
   min-height: 100%;
   overflow-x: hidden;
-  font-feature-settings: "calt" 1, "clig" 1, "dlig" 1, "kern" 1, "liga" 1, "salt" 1;
+  font-feature-settings: 'calt' 1, 'clig' 1, 'dlig' 1, 'kern' 1, 'liga' 1, 'salt' 1;
   padding-top: ${props => props.theme.header.height}px;
 `;
 
@@ -163,10 +148,10 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: super;
   }
   ::selection {
-    background: ${({theme}) => theme.colors.accentColors[0]};
+    background: ${({ theme }) => theme.colors.accentColors[0]};
   }
   ::-moz-selection {
-    background: ${({theme}) => theme.colors.accentColors[0]};
+    background: ${({ theme }) => theme.colors.accentColors[0]};
   }
   .footnotes {
     ol, p {
@@ -221,7 +206,5 @@ export default props => (
 Layout.propTypes = {
   children: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
-
-
