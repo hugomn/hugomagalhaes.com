@@ -44,13 +44,13 @@ const Layout = (props) => {
                 <meta property="og:description" content={description} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={url} />
-                <meta property="og:image" content={`${siteUrl}${withPrefix('/avatar.jpg')}`} />
+                <meta property="og:image" content={`${siteUrl}${withPrefix('/meta.jpg')}`} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={txt} />
                 <meta name="twitter:description" content={description} />
                 <meta name="twitter:site" content={`@${author.twitter}`} />
                 <meta name="twitter:author" content={`@${author.twitter}`} />
-                <meta name="twitter:image" content={`${siteUrl}${withPrefix('/avatar.jpg')}`} />
+                <meta name="twitter:image" content={`${siteUrl}${withPrefix('/meta.jpg')}`} />
               </Helmet>
             )}
           </FormattedMessage>
