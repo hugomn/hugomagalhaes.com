@@ -99,7 +99,7 @@ const BioWrapper = styled(Cell)`
   text-align: center;
   ${media.md`
     text-align: left;
-    background: url('./img/welcome_bg_curve.png') top right no-repeat;
+    background: url('/img/welcome_bg_curve.png') top right no-repeat;
     background-size: 244px 408px;
     font-size: 2.625rem;
     grid-column: 2 / span 1;
@@ -118,7 +118,7 @@ const PictureContainer = styled(Cell)`
   position: relative;
   grid-column: 2 / span 2;
   grid-row: 1 / span 1;
-  background: url('./img/welcome_bg.png') top left;
+  background: url('/img/welcome_bg.png') top left;
   border-radius: 50%;
   ${media.md`
     max-width: none;
@@ -153,7 +153,7 @@ const RightGapCell = styled(Cell)`
   grid-column: 4 / span 1;
   grid-row: 1 / span 1;
   ${media.md`
-    background: url('./img/welcome_bg.png') top left;
+    background: url('/img/welcome_bg.png') top left;
     background-size: 1px 408px;
   `}
 `;
