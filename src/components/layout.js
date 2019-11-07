@@ -86,6 +86,9 @@ const Container = styled(FixedContainer)`
 `;
 
 const GlobalStyle = createGlobalStyle`
+  body {
+    overscroll-behavior-y: none;
+  }
   a {
     color: ${props => props.theme.a.color};
     text-decoration: ${props => props.theme.a.textDecoration};
