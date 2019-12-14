@@ -19,7 +19,7 @@ module.exports = {
     { label: 'home', slug: '/' },
     { label: 'about', slug: '/about/' },
     { label: 'blog', slug: '/blog/' },
-    { label: 'talks', slug: '/talks/' },
+    // { label: 'talks', slug: '/talks/' },
     { label: 'contact', slug: '/contact/' },
     { label: 'call', link: 'http://call.hugo.im/' }
   ],
