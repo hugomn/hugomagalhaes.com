@@ -13,12 +13,13 @@ module.exports = {
     twitter: 'hugomn',
     defaultLink: 'https://github.com/hugomn'
   },
-  sourceCodeLink: 'https://github.com/hugomn/hugomagalhaes.com',
+  sourceCodeLink: 'https://github.com/hugomn/hugo.im',
   disqusShortname: 'hugomagalhes',
   menu: [
     { label: 'home', slug: '/' },
-    { label: 'blog', slug: '/blog/' },
     { label: 'about', slug: '/about/' },
+    { label: 'blog', slug: '/blog/' },
+    { label: 'talks', slug: '/talks/' },
     { label: 'contact', slug: '/contact/' },
     { label: 'call', link: 'http://call.hugo.im/' }
   ],

@@ -3,7 +3,7 @@ title: "Meu primeiro exit: o que aprendi nos 8 anos à frente do meuingresso.com
 date: "2019-01-16"
 layout: post
 draft: false
-featured: true
+featured: false
 tags:
   - pessoal
   - empreendedorismo
