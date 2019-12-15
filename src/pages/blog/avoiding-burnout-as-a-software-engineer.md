@@ -91,7 +91,7 @@ Only 60% of workers know what is expected of them. So, get clarity on everything
 
 ### 2) Stop multitasking
 
-I think this is so obvious. Multitasking reduces your productivity because your brain can only focus on one thing at a time – this continued stress definitely leads to burnout. If another task is given to you, ask your manager what they suggest you drop in order to complete that task. For larger projects breakfmore manageable tasks. In his book “Focus” that I strongly recommend, Daniel Goleman, says that how well you pay attention affects every aspect of your life. Effective focusing skills enhance mental processes, including understanding, learning, listening, being creative and reading other people’s signals. Most people underestimate focus or overlook its importance.
+I think this is so obvious. Multitasking reduces your productivity because your brain can only focus on one thing at a time – this continued stress definitely leads to burnout. If another task is given to you, ask your manager what they suggest you drop in order to complete that task. For larger projects break bigger tasks in more manageable ones. In his book “Focus” that I strongly recommend, Daniel Goleman, says that how well you pay attention affects every aspect of your life. Effective focusing skills enhance mental processes, including understanding, learning, listening, being creative and reading other people’s signals. Most people underestimate focus or overlook its importance.
 
 ### 3) Be OK with saying NO!
 

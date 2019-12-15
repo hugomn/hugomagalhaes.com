@@ -70,6 +70,7 @@ const Content = styled.section`
     margin: ${props => props.theme.blog.post.content.ul.margin};
     padding: ${props => props.theme.blog.post.content.ul.padding};
     font-size: ${props => props.theme.blog.post.content.ul.fontSize};
+    line-height: ${props => props.theme.p.lineHeight};
   }
 
   ul {

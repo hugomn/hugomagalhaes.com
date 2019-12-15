@@ -116,7 +116,7 @@ const theme = {
       }
     },
     desktop: {
-      padding: `${scale(3.5)} ${scale(3)}`,
+      padding: `${scale(3.8)} ${scale(3)}`,
       bg: 'transparent',
       a: {
         fontFamily: fonts.SansSerif,
@@ -295,7 +295,7 @@ const theme = {
   },
   i18n: {
     selectLanguage: {
-      padding: `${scale(3.5)} ${scale(2)}`,
+      padding: `${scale(3.8)} ${scale(2)}`,
       li: {
         margin: `0 0 0 5px`,
         padding: `${scale(-8)} ${scale(-2)} ${scale(-5)} ${scale(-2)}`,

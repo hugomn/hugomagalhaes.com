@@ -77,7 +77,7 @@ class Header extends React.Component {
     return (
       <Wrapper hidden={this.state.hidden}>
         <FixedContainer>
-          <Grid columns={'1fr 140px'}>
+          <Grid columns="1fr 140px">
             <MenuContainer>
               <Menu menu={menu} url={url} />
             </MenuContainer>
