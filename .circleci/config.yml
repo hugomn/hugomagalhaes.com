@@ -5,7 +5,7 @@ jobs:
       ignore:
         - gh-pages
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:latest
     working_directory: ~/repo
     environment:
       - SOURCE_BRANCH: master
@@ -14,8 +14,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
       - run:
           name: Install dependencies
           command: npm install
