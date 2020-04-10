@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Hugo Nogueira <hugomn@gmail.com>",
   "dependencies": {
-    "gatsby": "2.18.6",
+    "gatsby": "^2.20.16",
     "gatsby-plugin-google-fonts": "1.0.1",
     "gatsby-remark-figure-caption": "^2.0.0",
     "lodash.throttle": "^4.1.1",
