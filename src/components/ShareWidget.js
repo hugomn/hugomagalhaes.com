@@ -56,35 +56,33 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
     <Wrapper>
       <Ul>
         <li>
-          <A href={links.twitter(url, message)} target="_blank"
+          <A
+            href={links.twitter(url, message)} target="_blank"
             rel="noreferrer noopener"
             aria-label="Share on twitter"
-            title="Share on twitter">
+            title="Share on twitter"
+          >
             <FaTwitter />
           </A>
         </li>
         <li>
-          <A href={links.facebook(url, message)} target="_blank"
+          <A
+            href={links.facebook(url, message)} target="_blank"
             rel="noreferrer noopener"
             aria-label="Share on facebook"
-            title="Share on facebook">
+            title="Share on facebook"
+          >
             <FaFacebook />
           </A>
         </li>
         <li>
-          <A href={links.linkedin(url, message)} target="_blank"
+          <A
+            href={links.linkedin(url, message)} target="_blank"
             rel="noreferrer noopener"
             aria-label="Share on Linkedin"
-            title="Share on Linkedin">
+            title="Share on Linkedin"
+          >
             <FaLinkedin />
-          </A>
-        </li>
-        <li>
-          <A href={links.google(url, message)} target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Share on Google+"
-            title="Share on Google+">
-            <FaGoogle />
           </A>
         </li>
         <DisqusContainer>

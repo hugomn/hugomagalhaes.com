@@ -7,8 +7,6 @@ export default {
     `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(
       link || ''
     )}`,
-  google: link =>
-    `https://plus.google.com/share?url=${encodeURIComponent(link || '')}`,
   tumblr: link =>
     `http://tumblr.com/widgets/share/tool?canonicalUrl=${encodeURIComponent(
       link || ''
