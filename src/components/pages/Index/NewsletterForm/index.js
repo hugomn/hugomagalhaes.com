@@ -25,7 +25,7 @@ const NewsletterForm = () => {
           name="revue-form"
           target="_blank"
         >
-          <Flex flexDirection="column" p={[4, 5]}>
+          <Flex flexDirection="column" p={[4, 5]} minWidth={['auto', 'auto', '450px']}>
             <Title>Join Grow Newsletter</Title>
             <Label color="white" htmlFor="email" fontWeight="500">
                 E-mail address:

@@ -1,22 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import FixedContainer from "../components/FixedContainer";
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import { StaticQuery, graphql, withPrefix } from "gatsby";
-import { IntlProvider, FormattedMessage } from "react-intl";
-import en from "../data/messages/en";
-import pt from "../data/messages/pt";
-import theme from "../themes/theme";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import FixedContainer from '../components/FixedContainer';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { StaticQuery, graphql, withPrefix } from 'gatsby';
+import { IntlProvider, FormattedMessage } from 'react-intl';
+import en from '../data/messages/en';
+import pt from '../data/messages/pt';
+import theme from '../themes/theme';
 import {
   getLangs,
   getUrlForLang,
   getCurrentLangKey,
   isHomePage,
-} from "ptz-i18n";
-import Helmet from "react-helmet";
-import Welcome from "./Welcome";
+} from 'ptz-i18n';
+import Helmet from 'react-helmet';
+import Welcome from './Welcome';
 
 const messages = { en, pt };
 
@@ -26,11 +26,11 @@ const Layout = (props) => {
   const { langs, defaultLangKey } = props.data.site.siteMetadata.languages;
   const isHome = isHomePage(url, false, langs);
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-  const homeLink = `/${langKey !== "en" ? langKey : ""}`;
+  const homeLink = `/${langKey !== 'en' ? langKey : ''}`;
   const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map(
     (item) => ({
       ...item,
-      link: item.link.replace(`/${defaultLangKey}/`, "/"),
+      link: item.link.replace(`/${defaultLangKey}/`, '/'),
     })
   );
   const {
@@ -59,7 +59,7 @@ const Layout = (props) => {
                 />
                 <meta
                   property="og:image"
-                  content={`${siteUrl}${withPrefix("/meta.jpg")}`}
+                  content={`${siteUrl}${withPrefix('/meta.jpg')}`}
                 />
                 <meta property="fb:app_id" content="2528326990770132" />
                 <meta name="twitter:card" content="summary_large_image" />
@@ -69,7 +69,7 @@ const Layout = (props) => {
                 <meta name="twitter:author" content={`@${author.twitter}`} />
                 <meta
                   name="twitter:image"
-                  content={`${siteUrl}${withPrefix("/meta.jpg")}`}
+                  content={`${siteUrl}${withPrefix('/meta.jpg')}`}
                 />
               </Helmet>
             )}
@@ -81,7 +81,7 @@ const Layout = (props) => {
             url={url}
             menu={menu}
           />
-          {(url === "/" || url === "/pt/") && (
+          {(url === '/' || url === '/pt/') && (
             <Welcome author={author} langKey={langKey} />
           )}
           {/* {isHome && <Welcome author={author} langKey={langKey} />} */}

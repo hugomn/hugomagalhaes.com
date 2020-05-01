@@ -60,13 +60,13 @@ const Page = (props) => {
                 meta={[{ name: 'description', content: props.i18n.description }]}
               />
               <H1>
-                <span>{ title }</span>
+                <span>{title}</span>
               </H1>
             </Header>
           )}
         </FormattedMessage>
         <Content>
-          { props.i18n.content }
+          {props.i18n.content}
         </Content>
       </Wrapper>
     </Layout>

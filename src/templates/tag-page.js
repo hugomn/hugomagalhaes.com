@@ -35,7 +35,7 @@ const TagRoute = ({ data, pageContext, location }) => {
   const { author } = data.site.siteMetadata;
 
   const allTagsLink = (
-    <FormattedMessage id="tags.allTagsLink">{txt => <BtnLink to={`/tags/`}>{txt}</BtnLink>}</FormattedMessage>
+    <FormattedMessage id="tags.allTagsLink">{txt => <BtnLink to="/tags/">{txt}</BtnLink>}</FormattedMessage>
   );
 
   return (

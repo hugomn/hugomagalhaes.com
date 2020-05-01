@@ -8,18 +8,18 @@ import { formatReadingTime } from '../utils/helpers';
 
 const PostAuthor = ({ author, className, date, showFollow, timeToRead }) => {
   return (
-    <Wrapper columns={'50px 1fr'} className={className}>
+    <Wrapper columns="50px 1fr" className={className}>
       <Cell middle>
         <ProfilePicture email={author.email} alt={author.name} width={42} height={42} />
       </Cell>
       <Cell middle>
         <span>
           {author.name}
-          { showFollow 
+          {showFollow 
             ? <FollowButton href={`http://twitter.com/${author.twitter}`} target="_blank">
               <span>Follow</span>
             </FollowButton> 
-            : null }
+            : null}
         </span>
         <Date>
           <Time

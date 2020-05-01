@@ -65,8 +65,7 @@ class MenuItem extends React.PureComponent {
                 <MenuLink selected={item.selected} to={item.slug} onClick={this.open}>
                   {label}
                 </MenuLink>
-              )
-          }
+              )}
         </FormattedMessage>
         {subItems}
       </li>

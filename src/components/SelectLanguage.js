@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { Link } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const SelectLanguage = (props) => {
   const links = props.langs.map(({ langKey, link, selected }) => (
@@ -35,9 +35,9 @@ const LangLink = styled(Link)`
   &:hover {
     text-decoration: none;
     color: ${(props) =>
-      props.selected
-        ? props.theme.colors.dark[3]
-        : (props) => props.theme.menu.desktop.a.active.color};
+    props.selected
+      ? props.theme.colors.dark[3]
+      : (props) => props.theme.menu.desktop.a.active.color};
   }
 `;
 

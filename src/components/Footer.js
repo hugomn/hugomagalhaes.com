@@ -11,7 +11,7 @@ const Footer = ({ author, langs, sourceCodeLink, currentLangKey }) => {
   return (
     <Wrapper>
       <FixedContainer>
-        <Grid columns={'repeat(auto-fit,minmax(220px,1fr))'}>
+        <Grid columns="repeat(auto-fit,minmax(220px,1fr))">
           <LeftCell middle>
             <span>
               {' Made with '}

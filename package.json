@@ -28,7 +28,6 @@
     "lint": "./node_modules/.bin/eslint --fix --ext .js,.jsx --ignore-pattern public .",
     "build": "rm -rf public/*.html && gatsby build",
     "predeploy": "npm run build && rm public/*.js.map",
-    "deploy": "node scripts/deploy.js",
     "develop": "gatsby develop",
     "test": "jest",
     "test:watch": "jest --watch",

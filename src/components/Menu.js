@@ -48,8 +48,7 @@ class Menu extends React.PureComponent {
                   <MenuLink selected={isSelected(slug)} to={slug} onClick={this.open}>
                     {label}
                   </MenuLink>
-                )
-            }
+                )}
           </FormattedMessage>
           {subItems}
         </li>
@@ -68,7 +67,8 @@ class Menu extends React.PureComponent {
         <MenuLabel isOpen={isOpen} htmlFor="cb-menu">
           <FaBars />
           <InvisibleSpan>Menu</InvisibleSpan>
-          <Checkbox type="checkbox" name="cb-menu" id="cb-menu"
+          <Checkbox
+            type="checkbox" name="cb-menu" id="cb-menu"
             checked={this.state.isOpen}
             onChange={this.open}
           />
