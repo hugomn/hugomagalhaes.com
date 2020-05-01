@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Layout from '../layout';
-import PostCardList from '../PostCardList';
+import Layout from '../../layout';
+import PostCardList from '../../PostCardList';
 import { FormattedMessage } from 'react-intl';
-import BtnLink from '../BtnLink';
+import BtnLink from '../../BtnLink';
 import styled from 'styled-components';
-import { media } from '../../constants/responsive';
+import { media } from '../../../constants/responsive';
+import NewsletterForm from './NewsletterForm';
 
 const Index = (props) => {
-  const allStoriesPosts = props.data.all.edges.map(p => p.node);
-  const featuredPosts = props.data.featured.edges.map(p => p.node);
+  const allStoriesPosts = props.data.all.edges.map((p) => p.node);
+  const featuredPosts = props.data.featured.edges.map((p) => p.node);
   const { author } = props.data.site.siteMetadata;
   const { langKey } = props.pageContext;
 
@@ -19,19 +20,16 @@ const Index = (props) => {
         <FeaturedContainer>
           <H2>
             <FormattedMessage id="index.featured">
-              {(txt) => (
-                <span>{txt}</span>
-              )}
+              {(txt) => <span>{txt}</span>}
             </FormattedMessage>
           </H2>
           <PostCardList posts={featuredPosts} author={author} />
         </FeaturedContainer>
+        <NewsletterForm />
         <AllStoriesContainer>
           <H2>
             <FormattedMessage id="index.stories">
-              {(txt) => (
-                <span>{txt}</span>
-              )}
+              {(txt) => <span>{txt}</span>}
             </FormattedMessage>
           </H2>
           <PostCardList posts={allStoriesPosts} author={author} imageOnTop />
@@ -49,17 +47,17 @@ const Index = (props) => {
 };
 
 const Wrapper = styled.div`
-    ${media.md`
+  ${media.md`
         padding: 0 45px;
     `}
 `;
 
 const FeaturedContainer = styled.section`
-  margin: ${props => props.theme.blog.list.margin};
+  margin: ${(props) => props.theme.blog.list.margin};
 `;
 
 const AllStoriesContainer = styled.section`
-  margin: ${props => props.theme.blog.list.margin};
+  margin: ${(props) => props.theme.blog.list.margin};
 `;
 
 const H2 = styled.h2`
@@ -78,7 +76,7 @@ const H2 = styled.h2`
 Index.propTypes = {
   data: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Index;

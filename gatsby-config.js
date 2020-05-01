@@ -116,6 +116,7 @@ module.exports = {
         ],
         display: 'swap'
       }
-    }
+    },
+    `gatsby-alias-imports`
   ],
 };

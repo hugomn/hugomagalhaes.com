@@ -6,16 +6,16 @@ const scale = n => `${scaleN(n)}rem`;
 const headerHeight = 84;
 
 const brandColor = '#456EF6';
-const accentColors = ['#AEC0FB', '#F4F6FE', '#F2BE3B'];
-const darkColors = ['#333E49', '#435365', '#747474', '#B2B2B2'];
+const accent = ['#D2D7FF', '#F4F6FE', '#391695'];
+const dark = ['#333E49', '#435365', '#747474', '#B2B2B2'];
 const lightColors = ['#FFFFFF', '#FAFAFA', '#EFEFEF', '#D7D7D7'];
 
 const colors = {
   brand: brandColor,
-  accentColors,
+  accent,
   white: '#FFFFFF',
   black: '#454545', 
-  darkColors,
+  dark,
   lightColors,
   red: '#FF0000',
   darkBlue: '#587B7F',
@@ -52,7 +52,7 @@ const theme = {
     color: colors.brand,
     textDecoration: 'none',
     hover: {
-      color: colors.accentColors[0],
+      color: colors.accent[0],
       textDecoration: 'underline'
     }
   },
@@ -153,7 +153,7 @@ const theme = {
   welcome: {
     margin: 0,
     padding: `${scale(0)} 0`,
-    backgroundColor: colors.accentColors[1]
+    backgroundColor: colors.accent[1]
   },
   h1: {
     fontSize: scale(5.8),
@@ -191,7 +191,7 @@ const theme = {
       fontSize: scale(-0.7),
       lineHeight: scaleN(2),
       time: {
-        color: colors.darkColors[3]
+        color: colors.dark[3]
       }
     },
     list: {
@@ -248,7 +248,7 @@ const theme = {
           borderRadius: '0.2rem',
           margin: `0`,
           padding: `${scale(-8)} ${scale(-4)}`,
-          backgroundColor: colors.darkColors[1],
+          backgroundColor: colors.dark[1],
         },
         highlight: {
           backgroundColor: null,

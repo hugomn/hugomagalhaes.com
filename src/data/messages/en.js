@@ -17,6 +17,6 @@ module.exports = {
     } tagged with`,
   'contact': 'Contact',
   'call': 'Schedule a call',
-  'index.featured': 'Featured',
+  'index.featured': 'Featured posts',
   'index.stories': 'All stories'
 };

@@ -14,7 +14,6 @@ class Header extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log('[dev:hugo] props', props);
     this.state = {
       didScroll: true,
       lastScrollTop: 0,

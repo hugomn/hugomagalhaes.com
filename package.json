@@ -5,6 +5,7 @@
   "author": "Hugo Nogueira <hugomn@gmail.com>",
   "dependencies": {
     "gatsby": "^2.20.16",
+    "gatsby-alias-imports": "^1.0.4",
     "gatsby-plugin-google-fonts": "1.0.1",
     "gatsby-remark-figure-caption": "^2.0.0",
     "lodash.throttle": "^4.1.1",
@@ -13,7 +14,8 @@
     "react-dom": "16.12.0",
     "react-helmet": "5.2.1",
     "react-icon-base": "^2.1.2",
-    "styled-css-grid": "1.2.1"
+    "styled-css-grid": "1.2.1",
+    "styled-system": "^5.1.5"
   },
   "keywords": [
     "gatsby"
