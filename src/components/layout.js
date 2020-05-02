@@ -108,7 +108,6 @@ const BodyContainer = styled.div`
   right: 0;
   left: 0;
   bottom: 0;
-  min-height: 100%;
   overflow-x: hidden;
   font-feature-settings: "calt" 1, "clig" 1, "dlig" 1, "kern" 1, "liga" 1,
     "salt" 1;

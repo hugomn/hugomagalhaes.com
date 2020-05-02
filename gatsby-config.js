@@ -120,11 +120,10 @@ module.exports = {
     },
     `gatsby-alias-imports`,
     {
-      resolve: `gatsby-plugin-segment-js`,
+      resolve: `gatsby-plugin-segment-analytics`,
       options: {
-        prodKey: `GJS0QBPRIXZceVeXVVtqnyrI8fRCfg4U`,
-        trackPage: false,
+        writeKey: `GJS0QBPRIXZceVeXVVtqnyrI8fRCfg4U`,
       },
-    },
+    }
   ],
 };
