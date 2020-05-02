@@ -42,12 +42,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-16818992-1',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Hugo Nogueira',
