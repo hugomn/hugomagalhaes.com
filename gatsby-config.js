@@ -68,7 +68,7 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-sitemap'
+      resolve: 'gatsby-plugin-sitemap',
     },
     {
       resolve: 'gatsby-plugin-i18n',
@@ -92,19 +92,20 @@ module.exports = {
                   }
               }
           }
-          `
-        }
-      }
+          `,
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-i18n-tags',
-      options: { // Default options        
+      options: {
+        // Default options
         tagPage: 'src/templates/tag-page.js',
         tagsUrl: '/tags/',
         langKeyForNull: 'en',
         langKeyDefault: 'en',
-        prefixDefault: false
-      }
+        prefixDefault: false,
+      },
     },
     'gatsby-plugin-styled-components',
     {
@@ -112,11 +113,18 @@ module.exports = {
       options: {
         fonts: [
           `limelight`,
-          `Poppins:300,400,500,700` // you can also specify font weights and styles
+          `Poppins:300,400,500,700`, // you can also specify font weights and styles
         ],
-        display: 'swap'
-      }
+        display: 'swap',
+      },
     },
-    `gatsby-alias-imports`
+    `gatsby-alias-imports`,
+    {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        prodKey: `GJS0QBPRIXZceVeXVVtqnyrI8fRCfg4U`,
+        trackPage: false,
+      },
+    },
   ],
 };
