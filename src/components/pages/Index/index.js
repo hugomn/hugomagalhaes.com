@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Layout from '../../layout';
-import PostCardList from '../../PostCardList';
-import { FormattedMessage } from 'react-intl';
-import BtnLink from '../../BtnLink';
-import styled from 'styled-components';
-import { media } from '../../../constants/responsive';
-import NewsletterForm from './NewsletterForm';
+import React from "react";
+import PropTypes from "prop-types";
+import Layout from "../../layout";
+import PostCardList from "../../PostCardList";
+import { FormattedMessage } from "react-intl";
+import BtnLink from "../../BtnLink";
+import styled from "styled-components";
+import { media } from "../../../constants/responsive";
+import NewsletterForm from "./NewsletterForm";
 
 const Index = (props) => {
   const allStoriesPosts = props.data.all.edges.map((p) => p.node);
@@ -35,7 +35,7 @@ const Index = (props) => {
           <PostCardList posts={allStoriesPosts} author={author} imageOnTop />
           <FormattedMessage id="posts.seeMore">
             {(txt) => (
-              <BtnLink to={`/${langKey !== 'en' ? langKey : ''}/blog/`}>
+              <BtnLink to={`/${langKey !== "en" ? langKey : ""}/blog/`}>
                 {txt}
               </BtnLink>
             )}

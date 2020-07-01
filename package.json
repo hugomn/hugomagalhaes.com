@@ -8,6 +8,7 @@
     "gatsby-alias-imports": "^1.0.4",
     "gatsby-plugin-google-fonts": "1.0.1",
     "gatsby-plugin-segment-analytics": "^0.2.1",
+    "gatsby-plugin-twitter": "^2.3.6",
     "gatsby-remark-figure-caption": "^2.0.0",
     "lodash.throttle": "^4.1.1",
     "moment": "2.24.0",
