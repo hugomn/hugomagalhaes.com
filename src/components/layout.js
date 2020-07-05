@@ -24,9 +24,10 @@ const Layout = (props) => {
   const homeLink = `/${langKey !== 'en' ? langKey : ''}`;
   const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({
     ...item,
-    link: item.link.replace(`/${defaultLangKey}/`, ''),
+    link: item.link.replace(`/${defaultLangKey}/`, '/').replace(`//`, `/`),
   }));
   const { menu, author, sourceCodeLink, siteUrl, description } = props.data.site.siteMetadata;
+  console.log(menu);
 
   return (
     <ThemeProvider theme={theme}>

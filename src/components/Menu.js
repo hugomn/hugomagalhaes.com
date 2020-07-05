@@ -25,7 +25,7 @@ class Menu extends React.PureComponent {
 
   getMenuItems = (isSelected, menu, langKey) => {
     return menu.map((item) => {
-      const slug = `${langKey !== 'en' ? `/${langKey}` : ''}${item.slug}`;
+      const slug = `${langKey !== 'en' ? `/${langKey}` : '/'}${item.slug}`.replace('//', '/');
       const subItems = item.items ? (
         <ul style={{ display: 'none' }}>{this.getMenuItems(isSelected, item.items, langKey)}</ul>
       ) : null;
