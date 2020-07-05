@@ -30,20 +30,17 @@ const LangLink = styled(Link)`
   font-weight: ${(props) => props.theme.i18n.selectLanguage.li.fontWeight};
   text-transform: uppercase;
   padding: ${(props) => props.theme.i18n.selectLanguage.li.padding};
-  color: ${(props) =>
-    props.selected ? props.theme.colors.dark[3] : props.theme.colors.black};
+  color: ${(props) => (props.selected ? props.theme.colors.dark[3] : props.theme.colors.black)};
   &:hover {
     text-decoration: none;
     color: ${(props) =>
-    props.selected
-      ? props.theme.colors.dark[3]
-      : (props) => props.theme.menu.desktop.a.active.color};
+      props.selected ? props.theme.colors.dark[3] : (props) => props.theme.menu.desktop.a.active.color};
   }
 `;
 
 const Li = styled.li`
   &:nth-child(n + 2):before {
-    content: "/";
+    content: '/';
     color: ${(props) => props.theme.colors.dark[3]};
   }
   display: inline-block;

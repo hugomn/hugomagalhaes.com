@@ -9,12 +9,7 @@ import { IntlProvider, FormattedMessage } from 'react-intl';
 import en from '../data/messages/en';
 import pt from '../data/messages/pt';
 import theme from '../themes/theme';
-import {
-  getLangs,
-  getUrlForLang,
-  getCurrentLangKey,
-  isHomePage,
-} from 'ptz-i18n';
+import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n';
 import Helmet from 'react-helmet';
 import Welcome from './Welcome';
 
@@ -27,19 +22,11 @@ const Layout = (props) => {
   const isHome = isHomePage(url, false, langs);
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
   const homeLink = `/${langKey !== 'en' ? langKey : ''}`;
-  const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map(
-    (item) => ({
-      ...item,
-      link: item.link.replace(`/${defaultLangKey}/`, '/'),
-    })
-  );
-  const {
-    menu,
-    author,
-    sourceCodeLink,
-    siteUrl,
-    description,
-  } = props.data.site.siteMetadata;
+  const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({
+    ...item,
+    link: item.link.replace(`/${defaultLangKey}/`, ''),
+  }));
+  const { menu, author, sourceCodeLink, siteUrl, description } = props.data.site.siteMetadata;
 
   return (
     <ThemeProvider theme={theme}>
@@ -53,46 +40,25 @@ const Layout = (props) => {
                 <meta property="og:title" content={txt} />
                 <meta property="og:description" content={description} />
                 <meta property="og:type" content="website" />
-                <meta
-                  property="og:url"
-                  content={`${siteUrl}${withPrefix(url)}`}
-                />
-                <meta
-                  property="og:image"
-                  content={`${siteUrl}${withPrefix('/meta.jpg')}`}
-                />
+                <meta property="og:url" content={`${siteUrl}${withPrefix(url)}`} />
+                <meta property="og:image" content={`${siteUrl}${withPrefix('/meta.jpg')}`} />
                 <meta property="fb:app_id" content="2528326990770132" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={txt} />
                 <meta name="twitter:description" content={description} />
                 <meta name="twitter:site" content={`@${author.twitter}`} />
                 <meta name="twitter:author" content={`@${author.twitter}`} />
-                <meta
-                  name="twitter:image"
-                  content={`${siteUrl}${withPrefix('/meta.jpg')}`}
-                />
+                <meta name="twitter:image" content={`${siteUrl}${withPrefix('/meta.jpg')}`} />
               </Helmet>
             )}
           </FormattedMessage>
-          <Header
-            isHome={isHome}
-            homeLink={homeLink}
-            langs={langsMenu}
-            url={url}
-            menu={menu}
-          />
-          {(url === '/' || url === '/pt/') && (
-            <Welcome author={author} langKey={langKey} />
-          )}
+          <Header isHome={isHome} homeLink={homeLink} langs={langsMenu} url={url} menu={menu} />
+          {(url === '/' || url === '/pt/') && <Welcome author={author} langKey={langKey} />}
           {/* {isHome && <Welcome author={author} langKey={langKey} />} */}
           <Container>
             <main>{children}</main>
           </Container>
-          <Footer
-            author={author}
-            langs={langsMenu}
-            sourceCodeLink={sourceCodeLink}
-          />
+          <Footer author={author} langs={langsMenu} sourceCodeLink={sourceCodeLink} />
           <GlobalStyle />
         </BodyContainer>
       </IntlProvider>
@@ -109,8 +75,7 @@ const BodyContainer = styled.div`
   left: 0;
   bottom: 0;
   overflow-x: hidden;
-  font-feature-settings: "calt" 1, "clig" 1, "dlig" 1, "kern" 1, "liga" 1,
-    "salt" 1;
+  font-feature-settings: 'calt' 1, 'clig' 1, 'dlig' 1, 'kern' 1, 'liga' 1, 'salt' 1;
   padding-top: ${(props) => props.theme.header.height}px;
 `;
 
