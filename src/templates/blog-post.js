@@ -32,20 +32,16 @@ const Content = styled.section`
     font-size: ${(props) => props.theme.blog.post.content.code.fontSize};
     margin: ${(props) => props.theme.blog.post.content.code.margin};
     padding: ${(props) => props.theme.blog.post.content.code.padding};
-    background-color: ${(props) =>
-    props.theme.blog.post.content.code.backgroundColor};
-    border-radius: ${(props) =>
-    props.theme.blog.post.content.code.borderRadius};
+    background-color: ${(props) => props.theme.blog.post.content.code.backgroundColor};
+    border-radius: ${(props) => props.theme.blog.post.content.code.borderRadius};
   }
 
   .gatsby-highlight {
     margin: ${(props) => props.theme.blog.post.content.highlight.margin};
     padding: ${(props) => props.theme.blog.post.content.highlight.padding};
-    background-color: ${(props) =>
-    props.theme.blog.post.content.highlight.backgroundColor};
+    background-color: ${(props) => props.theme.blog.post.content.highlight.backgroundColor};
     display: flex;
-    border-radius: ${(props) =>
-    props.theme.blog.post.content.highlight.borderRadius};
+    border-radius: ${(props) => props.theme.blog.post.content.highlight.borderRadius};
     overflow: auto;
 
     code {
@@ -116,11 +112,7 @@ class BlogPostRoute extends React.PureComponent {
   render() {
     const post = this.props.data.markdownRemark;
     const structuredData = getStructuredData(post);
-    const {
-      author,
-      disqusShortname,
-      siteUrl,
-    } = this.props.data.site.siteMetadata;
+    const { author, disqusShortname, siteUrl } = this.props.data.site.siteMetadata;
     const url = `${siteUrl}${post.fields.slug}`;
 
     return (
@@ -134,47 +126,19 @@ class BlogPostRoute extends React.PureComponent {
             <meta property="og:description" content={post.excerpt} />
             <meta property="og:type" content="article" />
             <meta property="og:url" content={url} />
-            <meta
-              property="og:image"
-              content={`${siteUrl}${withPrefix(
-                post.frontmatter.image.publicURL
-              )}`}
-            />
-            <meta
-              property="og:image:width"
-              content={`${siteUrl}${withPrefix(
-                post.frontmatter.image.publicURL
-              )}`}
-            />
-            <meta
-              property="og:image"
-              content={`${siteUrl}${withPrefix(
-                post.frontmatter.image.publicURL
-              )}`}
-            />
+            <meta property="og:image" content={`${siteUrl}${withPrefix(post.frontmatter.image.publicURL)}`} />
+            <meta property="og:image:width" content={`${siteUrl}${withPrefix(post.frontmatter.image.publicURL)}`} />
+            <meta property="og:image" content={`${siteUrl}${withPrefix(post.frontmatter.image.publicURL)}`} />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={post.frontmatter.title} />
             <meta name="twitter:description" content={post.excerpt} />
-            <meta
-              name="twitter:image"
-              content={`${siteUrl}${withPrefix(
-                post.frontmatter.image.publicURL
-              )}`}
-            />
+            <meta name="twitter:image" content={`${siteUrl}${withPrefix(post.frontmatter.image.publicURL)}`} />
           </Helmet>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: structuredData }}
-          />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
 
           <header>
             <H1>{post.frontmatter.title}</H1>
-            <Author
-              author={author}
-              date={post.frontmatter.date}
-              timeToRead={post.timeToRead}
-              showFollow
-            />
+            <Author author={author} date={post.frontmatter.date} timeToRead={post.timeToRead} showFollow />
             <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
           </header>
           {/* <EditBtn
@@ -189,11 +153,7 @@ class BlogPostRoute extends React.PureComponent {
             title={post.frontmatter.title}
             url={url}
           />
-          <ShareWidget
-            disqusShortname={disqusShortname}
-            url={url}
-            message={post.excerpt}
-          />
+          <ShareWidget disqusShortname={disqusShortname} url={url} message={post.excerpt} />
           {/* <PostCardList
             posts={post.fields.readNextPosts}
             langKey={langKey}

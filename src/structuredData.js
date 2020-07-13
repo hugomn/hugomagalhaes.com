@@ -43,52 +43,37 @@ const addContext = (structuredData) => {
   return structuredData;
 };
 
-const getDate = pipe(
-  prop('frontmatter'),
-  prop('date')
-);
+const getDate = pipe(prop('frontmatter'), prop('date'));
 
 const addDatePublished = (markdownRemark) => {
-  return assocPath(['frontmatter', 'structuredData', 'datePublished'],
-    getDate(markdownRemark), markdownRemark);
+  return assocPath(['frontmatter', 'structuredData', 'datePublished'], getDate(markdownRemark), markdownRemark);
 };
 
-const getHeadline = pipe(
-  prop('frontmatter'),
-  prop('title')
-);
+const getHeadline = pipe(prop('frontmatter'), prop('title'));
 
 const addHeadline = (markdownRemark) => {
-  return assocPath(['frontmatter', 'structuredData', 'headline'],
-    getHeadline(markdownRemark), markdownRemark);
+  return assocPath(['frontmatter', 'structuredData', 'headline'], getHeadline(markdownRemark), markdownRemark);
 };
 
-const getArticleBody = pipe(
-  prop('html')
-);
+const getArticleBody = pipe(prop('html'));
 
 const addArticleBody = (markdownRemark) => {
-  return assocPath(['frontmatter', 'structuredData', 'articleBody'],
-    getArticleBody(markdownRemark), markdownRemark);
+  return assocPath(['frontmatter', 'structuredData', 'articleBody'], getArticleBody(markdownRemark), markdownRemark);
 };
 
 const addAuthor = (structuredData) => {
   return structuredData.author
     ? {
-      ...structuredData,
-      author: getAuthor(structuredData.author)
-    }
+        ...structuredData,
+        author: getAuthor(structuredData.author),
+      }
     : structuredData;
 };
 
-const getLangKey = pipe(
-  prop('frontmatter'),
-  prop('title')
-);
+const getLangKey = pipe(prop('frontmatter'), prop('title'));
 
 const addLanguage = (markdownRemark) => {
-  return assocPath(['fields', 'langKey'],
-    getLangKey(markdownRemark), markdownRemark);
+  return assocPath(['fields', 'langKey'], getLangKey(markdownRemark), markdownRemark);
 };
 
 /**
@@ -100,31 +85,20 @@ const addLanguage = (markdownRemark) => {
  *
  * @type {Object => String}
  */
-const getStructuredData =
-  pipe(
-    addDatePublished,
-    addHeadline,
-    addArticleBody,
-    addLanguage,
-    prop('frontmatter'),
-    prop('structuredData'),
-    renameType,
-    addContext,
-    addAuthor,
-    cleanStructuredData,
-    JSON.stringify
-  );
-
-const getStructuredDataForAuthor =
-  pipe(
-    renameType,
-    addContext,
-    cleanStructuredData,
-    JSON.stringify
-  );
-
-export {
+const getStructuredData = pipe(
+  addDatePublished,
+  addHeadline,
+  addArticleBody,
+  addLanguage,
+  prop('frontmatter'),
+  prop('structuredData'),
+  renameType,
+  addContext,
+  addAuthor,
   cleanStructuredData,
-  getStructuredData,
-  getStructuredDataForAuthor
-};
+  JSON.stringify,
+);
+
+const getStructuredDataForAuthor = pipe(renameType, addContext, cleanStructuredData, JSON.stringify);
+
+export { cleanStructuredData, getStructuredData, getStructuredDataForAuthor };
