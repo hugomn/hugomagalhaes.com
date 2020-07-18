@@ -30,7 +30,7 @@ const Index = (props) => {
           </H2>
           <PostCardList posts={allStoriesPosts} author={author} imageOnTop />
           <FormattedMessage id="posts.seeMore">
-            {(txt) => <BtnLink to={`/${langKey !== 'en' ? langKey : ''}/blog/`}>{txt}</BtnLink>}
+            {(txt) => <BtnLink to={`/${langKey !== 'en' ? `${langKey}/` : ''}blog`}>{txt}</BtnLink>}
           </FormattedMessage>
         </AllStoriesContainer>
       </Wrapper>
