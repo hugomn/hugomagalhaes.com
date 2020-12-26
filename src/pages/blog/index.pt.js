@@ -15,37 +15,34 @@ export const pageQuery = graphql`
           defaultLink
         }
       }
-    },
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { draft: { ne: true } },
-        fields: { langKey: { regex: "/(pt|any)/" } }
-      },
+      filter: { frontmatter: { draft: { ne: true } }, fields: { langKey: { regex: "/(pt|any)/" } } }
     ) {
       edges {
-        node{
-          frontmatter{
-            title,
-            tags,
-            date,
+        node {
+          frontmatter {
+            title
+            tags
+            date
             image {
-              childImageSharp{
-                  sizes(maxWidth: 750) {
-                      ...GatsbyImageSharpSizes
-                  }
+              childImageSharp {
+                sizes(maxWidth: 750) {
+                  ...GatsbyImageSharpSizes
+                }
               }
             }
-          },
-          fields{
-            slug,
-            langKey,
-            tagSlugs{
-              tag,
+          }
+          fields {
+            slug
+            langKey
+            tagSlugs {
+              tag
               link
             }
-          },
+          }
           excerpt
         }
       }

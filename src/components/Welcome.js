@@ -9,11 +9,13 @@ import Avatar from './img/welcome_avatar.png';
 const Welcome = ({ author, className, langKey }) => {
   const getIntro = () => ({
     en: `Hello! My name is <span class="name">Hugo</span>`,
-    pt: `Olá! Meu nome é <span class="name">Hugo</span>`
+    pt: `Olá! Meu nome é <span class="name">Hugo</span>`,
   });
   const getBio = () => ({
-    en: 'I\'m an engineering lead at <a href="https://www.bcgdv.com"><b>BCG Digital Ventures</b></a>. We invent, build and invest in startups with the world\'s most influential companies. I build high-performance products and teams.  I\'m a software engineer with 12+ years of experience and I\'ve been managing technology teams in the last 8 years.',
-    pt: 'Sou líder de engenharia na <a href="https://www.bcgdv.com"><b>BCG Digital Ventures</b></a>. Nós criamos, construímos e investimos em startups junto com as empresas mais influentes do mundo. Eu construo times e produtos de alta-performance. Sou um engenheiro de software e gerente de projetos com mais de 12 anos de experiência.'
+    en:
+      "I'm an engineering lead at <a href=\"https://www.bcgdv.com\"><b>BCG Digital Ventures</b></a>. We invent, build and invest in startups with the world's most influential companies. I build high-performance products and teams.  I'm a software engineer with 12+ years of experience and I've been managing technology teams in the last 8 years.",
+    pt:
+      'Sou líder de engenharia na <a href="https://www.bcgdv.com"><b>BCG Digital Ventures</b></a>. Nós criamos, construímos e investimos em startups junto com as empresas mais influentes do mundo. Eu construo times e produtos de alta-performance. Sou um engenheiro de software e gerente de projetos com mais de 12 anos de experiência.',
   });
   return (
     <MainWrapper className={className}>
@@ -69,7 +71,7 @@ const Welcome = ({ author, className, langKey }) => {
 };
 
 const MainWrapper = styled.div`
-  background-color: ${props => props.theme.welcome.backgroundColor};
+  background-color: ${(props) => props.theme.welcome.backgroundColor};
   padding-top: 2rem;
   ${media.md`
     padding-top: 0;
@@ -77,13 +79,13 @@ const MainWrapper = styled.div`
 `;
 
 const Wrapper = styled(Grid)`
-  margin: ${props => props.theme.welcome.margin};
-  font-family: ${props => props.theme.blog.author.fontFamily};
-  font-size: ${props => props.theme.blog.author.fontSize};
-  line-height: ${props => props.theme.blog.author.lineHeight};
+  margin: ${(props) => props.theme.welcome.margin};
+  font-family: ${(props) => props.theme.blog.author.fontFamily};
+  font-size: ${(props) => props.theme.blog.author.fontSize};
+  line-height: ${(props) => props.theme.blog.author.lineHeight};
   height: auto;
   grid-auto-flow: row dense;
-  grid-auto-rows: minmax(20px,auto);
+  grid-auto-rows: minmax(20px, auto);
   grid-template-columns: auto 4.2rem 4.2rem auto;
   grid-gap: 0px;
   ${media.md`
@@ -127,7 +129,6 @@ const PictureContainer = styled(Cell)`
     grid-column: 3 / span 1;
     grid-row: 1 / span 1;
   `}
-  
 `;
 
 const ProfilePicture = styled.img`
@@ -160,7 +161,7 @@ const RightGapCell = styled(Cell)`
 
 const Name = styled.div`
   font-size: 1.6rem;
-  font-family: ${props => props.theme.fonts.SansSerif};
+  font-family: ${(props) => props.theme.fonts.SansSerif};
   font-weight: 500;
   margin: 1.2rem 0 1.6rem;
   ${media.md`
@@ -169,15 +170,17 @@ const Name = styled.div`
     font-size: 2.625rem;
   `}
   .name {
-    color: ${({theme}) => theme.colors.brand};
+    color: ${({ theme }) => theme.colors.brand};
   }
 `;
 
 const Bio = styled.div`
-  line-height: ${({theme}) => theme.scale(3.2)};
+  line-height: ${({ theme }) => theme.scale(3.2)};
   display: block;
   font-size: 0.9rem;
-  br { display: none; }
+  br {
+    display: none;
+  }
   padding: 0 35px;
   ${media.md`
     br { display: block; }
@@ -200,16 +203,16 @@ const SocialLinks = styled.ul`
 `;
 
 const A = styled.a`
-  color: ${props => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.black};
   text-decoration: none;
   font-size: 1.5rem;
   display: inline-block;
-  padding: ${props => props.theme.socialLinks.a.padding};
+  padding: ${(props) => props.theme.socialLinks.a.padding};
   transition: 0.3s;
   opacity: 0.8;
   &:hover {
     opacity: 1;
-    color: ${props => props.theme.socialLinks.a.hover.color};
+    color: ${(props) => props.theme.socialLinks.a.hover.color};
     transition: 0.3s;
   }
 `;
@@ -217,7 +220,7 @@ const A = styled.a`
 Welcome.propTypes = {
   author: PropTypes.object.isRequired,
   className: PropTypes.string,
-  langKey: PropTypes.string
+  langKey: PropTypes.string,
 };
 
 export default Welcome;

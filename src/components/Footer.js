@@ -63,7 +63,7 @@ const GithubIcon = styled(FaGithub)`
   opacity: 0.7;
   padding: 0 ${({ theme }) => theme.scale(-6)} 0 0;
   :hover {
-    color: ${props => props.theme.colors.brand}!important;
+    color: ${(props) => props.theme.colors.brand}!important;
   }
 `;
 
@@ -73,7 +73,7 @@ const HeartIcon = styled(FaHeart)`
   transition: all 0.4s;
   animation: ${keyframes`to { transform: scale(1.2); }`} 0.42s infinite alternate;
   :hover {
-    color: ${props => props.theme.colors.red}!important;
+    color: ${(props) => props.theme.colors.red}!important;
   }
 `;
 
@@ -97,7 +97,7 @@ Footer.propTypes = {
   author: PropTypes.object.isRequired,
   langs: PropTypes.array,
   sourceCodeLink: PropTypes.string.isRequired,
-  currentLangKey: PropTypes.string
+  currentLangKey: PropTypes.string,
 };
 
 export default Footer;

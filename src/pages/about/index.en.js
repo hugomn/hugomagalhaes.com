@@ -57,9 +57,8 @@ const i18n = {
       <p>
         I build web apps. My passion is <strong>front-end development</strong>. But I also know how to build performant
         and modern <strong>server applications</strong> and I have huge experience with{' '}
-        <strong>mobile development</strong>.
-        <strong>React</strong> and <strong>Node.js.</strong>&nbsp;I believe beautiful <strong>user interfaces</strong>{' '}
-        are one of the keys to great <strong>experiences</strong>.&nbsp;
+        <strong>mobile development</strong>.<strong>React</strong> and <strong>Node.js.</strong>&nbsp;I believe
+        beautiful <strong>user interfaces</strong> are one of the keys to great <strong>experiences</strong>.&nbsp;
       </p>
       <p>
         If you want to know more, <a href="/contact">please contact me</a>. I&rsquo;d love to chat or have a{' '}
@@ -70,7 +69,7 @@ const i18n = {
   ),
   description: `
     I'm a software engineer with 12+ years of experience and I've been managing technology teams in the last 8 years.
-  `
+  `,
 };
 
 export default (props) => <Page i18n={i18n} {...props} />;

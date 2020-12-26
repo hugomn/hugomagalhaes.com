@@ -8,29 +8,29 @@ import Helmet from 'react-helmet';
 import Layout from '../layout';
 
 const Wrapper = styled.article`
-  margin: ${props => props.theme.page.margin};
-  padding: ${props => props.theme.page.padding};
-  max-width: ${props => props.theme.page.maxWidth};
+  margin: ${(props) => props.theme.page.margin};
+  padding: ${(props) => props.theme.page.padding};
+  max-width: ${(props) => props.theme.page.maxWidth};
 `;
 
 const Header = styled.header`
-  font-family: ${props => props.theme.page.header.fontFamily};
+  font-family: ${(props) => props.theme.page.header.fontFamily};
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  margin: ${props => props.theme.page.header.margin};
+  margin: ${(props) => props.theme.page.header.margin};
 `;
 
 const Content = styled.section`
-  font-family: ${props => props.theme.page.content.fontFamily};
+  font-family: ${(props) => props.theme.page.content.fontFamily};
   p {
-    margin: ${props => props.theme.page.content.p.margin};
-    padding: ${props => props.theme.page.content.p.padding};
-    font-size: ${props => props.theme.p.fontSize};
-    line-height: ${props => props.theme.p.lineHeight};
+    margin: ${(props) => props.theme.page.content.p.margin};
+    padding: ${(props) => props.theme.page.content.p.padding};
+    font-size: ${(props) => props.theme.p.fontSize};
+    line-height: ${(props) => props.theme.p.lineHeight};
   }
 `;
 
 const H1 = styled.h1`
-  font-size: ${props => props.theme.page.header.fontSize};
+  font-size: ${(props) => props.theme.page.header.fontSize};
   padding: 0;
   span {
     border-bottom: 1px solid rgba(0, 0, 0, 0.44);
@@ -48,26 +48,18 @@ const Page = (props) => {
   return (
     <Layout location={props.location}>
       <Wrapper>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: structuredData }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
         <FormattedMessage id={props.i18n.titleId}>
           {(title) => (
             <Header>
-              <Helmet
-                title={title}
-                meta={[{ name: 'description', content: props.i18n.description }]}
-              />
+              <Helmet title={title} meta={[{ name: 'description', content: props.i18n.description }]} />
               <H1>
                 <span>{title}</span>
               </H1>
             </Header>
           )}
         </FormattedMessage>
-        <Content>
-          {props.i18n.content}
-        </Content>
+        <Content>{props.i18n.content}</Content>
       </Wrapper>
     </Layout>
   );
@@ -79,7 +71,7 @@ Page.propTypes = {
     content: PropTypes.object.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Page;

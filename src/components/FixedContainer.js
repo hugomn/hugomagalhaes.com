@@ -5,12 +5,12 @@ const FixedContainer = styled('section')(
   {
     maxWidth: ({ theme: t }) => t.maxWidth,
     margin: '0 auto',
-    padding: ({theme: t}) => `0 ${t.scaleN(2)}rem`
+    padding: ({ theme: t }) => `0 ${t.scaleN(2)}rem`,
   },
   color,
   flexbox,
   layout,
-  space
+  space,
 );
 
 FixedContainer.displayName = 'FixedContainer';

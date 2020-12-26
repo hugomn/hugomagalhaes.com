@@ -31,7 +31,7 @@ const authors = {
       familyName: 'Costa',
       gender: 'Female',
       nationality: 'Brazilian',
-      homeLocation: 'Berlin'
+      homeLocation: 'Berlin',
     },
     telephone: '...',
     weight: '...',
@@ -42,21 +42,19 @@ const authors = {
     identifier: '...',
     image: 'http://www.gravatar.com/avatar/9174fca44b5ca403593ac9cb2407e0e7',
     sameAs: 'https://hugomagalhaes.com/en/about/',
-    url: 'https://hugomagalhaes.com/en/about/'
-  }
+    url: 'https://hugomagalhaes.com/en/about/',
+  },
 };
 
 const getAuthor = (id) => {
   const author = {
     ...authors[id],
-    '@type': 'Person'
+    '@type': 'Person',
   };
-  return author
-    ? author
-    : authors[0];
+  return author ? author : authors[0];
 };
 
 module.exports = {
   authors,
-  getAuthor
+  getAuthor,
 };

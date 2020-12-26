@@ -1,13 +1,5 @@
 import styled from 'styled-components';
-import {
-  color,
-  fontFamily,
-  fontWeight,
-  fontSize,
-  textAlign,
-  lineHeight,
-  letterSpacing
-} from 'styled-system';
+import { color, fontFamily, fontWeight, fontSize, textAlign, lineHeight, letterSpacing } from 'styled-system';
 
 import themed from 'components/helpers';
 import { Box } from 'components/Box';
@@ -20,7 +12,7 @@ export const Text = styled(Box)(
   textAlign,
   lineHeight,
   letterSpacing,
-  themed('Text')
+  themed('Text'),
 );
 
 Text.propTypes = {
@@ -30,7 +22,7 @@ Text.propTypes = {
   ...fontSize.propTypes,
   ...textAlign.propTypes,
   ...lineHeight.propTypes,
-  ...letterSpacing.propTypes
+  ...letterSpacing.propTypes,
 };
 
 Text.displayName = 'Text';

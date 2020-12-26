@@ -9,14 +9,14 @@ import Layout from '../components/layout';
 import BtnLink from '../components/BtnLink';
 
 const Wrapper = styled.section`
-  margin: ${props => props.theme.page.margin};
-  padding: ${props => props.theme.page.padding};
+  margin: ${(props) => props.theme.page.margin};
+  padding: ${(props) => props.theme.page.padding};
 `;
 
 const Header = styled.header`
-  font-family: ${props => props.theme.page.header.fontFamily};
+  font-family: ${(props) => props.theme.page.header.fontFamily};
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  margin: ${props => props.theme.page.header.margin};
+  margin: ${(props) => props.theme.page.header.margin};
 `;
 
 const H1 = styled.h1`
@@ -31,24 +31,24 @@ const H1 = styled.h1`
 `;
 
 const TagRoute = ({ data, pageContext, location }) => {
-  const posts = data.allMarkdownRemark.edges.map(p => p.node);
+  const posts = data.allMarkdownRemark.edges.map((p) => p.node);
   const { author } = data.site.siteMetadata;
 
   const allTagsLink = (
-    <FormattedMessage id="tags.allTagsLink">{txt => <BtnLink to="/tags/">{txt}</BtnLink>}</FormattedMessage>
+    <FormattedMessage id="tags.allTagsLink">{(txt) => <BtnLink to="/tags/">{txt}</BtnLink>}</FormattedMessage>
   );
 
   return (
     <Layout location={location}>
       <Wrapper>
         <FormattedMessage id="tags">
-          {txt => (
+          {(txt) => (
             <Header>
               <Helmet title={`${pageContext.tag} | ${txt}`} meta={[{ name: 'description', content: txt }]} />
               <H1>
                 <span>
                   <FormattedMessage id="tags.nPostsTaggedWith" values={{ nPosts: data.allMarkdownRemark.totalCount }}>
-                    {txt => `${txt} "${pageContext.tag}"`}
+                    {(txt) => `${txt} "${pageContext.tag}"`}
                   </FormattedMessage>
                 </span>
               </H1>
@@ -65,7 +65,7 @@ const TagRoute = ({ data, pageContext, location }) => {
 TagRoute.propTypes = {
   data: PropTypes.object,
   location: PropTypes.object.isRequired,
-  pageContext: PropTypes.object
+  pageContext: PropTypes.object,
 };
 
 export default TagRoute;

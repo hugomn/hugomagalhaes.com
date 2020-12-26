@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { FaEdit }  from 'react-icons/fa';
+import { FaEdit } from 'react-icons/fa';
 
 const A = styled.a`
   display: block;
@@ -12,7 +12,7 @@ const A = styled.a`
   font-size: 1rem;
   transition: 0.3s;
 
-  &:hover{
+  &:hover {
     transition: 0.3s;
     color: ${({ theme }) => theme.colors.white};
   }
@@ -31,7 +31,7 @@ const getLabel = () => {
   return {
     en: 'Edit',
     fr: 'Modifier',
-    pt: 'Editar'
+    pt: 'Editar',
   };
 };
 
@@ -46,7 +46,7 @@ const EditBtn = ({ fileAbsolutePath, currentLangKey }) => {
 
 EditBtn.propTypes = {
   fileAbsolutePath: PropTypes.string,
-  currentLangKey: PropTypes.string
+  currentLangKey: PropTypes.string,
 };
 
 export default EditBtn;

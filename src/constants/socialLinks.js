@@ -1,52 +1,29 @@
 export default {
   twitter: (link, message) =>
-    `https://twitter.com/intent/tweet/?text=${encodeURIComponent(
-      message || ''
-    )}&url=${encodeURIComponent(link || '')}`,
-  facebook: link =>
-    `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-      link || ''
-    )}`,
-  tumblr: link =>
-    `http://tumblr.com/widgets/share/tool?canonicalUrl=${encodeURIComponent(
-      link || ''
-    )}`,
-  reddit: link =>
-    `https://reddit.com/submit/?url=${encodeURIComponent(link || '')}`,
+    `https://twitter.com/intent/tweet/?text=${encodeURIComponent(message || '')}&url=${encodeURIComponent(link || '')}`,
+  facebook: (link) => `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(link || '')}`,
+  tumblr: (link) => `http://tumblr.com/widgets/share/tool?canonicalUrl=${encodeURIComponent(link || '')}`,
+  reddit: (link) => `https://reddit.com/submit/?url=${encodeURIComponent(link || '')}`,
   whatsapp: (link, message) =>
-    `whatsapp://send?text=${encodeURIComponent(message)}%20${encodeURIComponent(
-      link || ''
-    )}`,
+    `whatsapp://send?text=${encodeURIComponent(message)}%20${encodeURIComponent(link || '')}`,
   telegram: (link, message) =>
-    `https://telegram.me/share/url?text=${encodeURIComponent(
-      message || ''
-    )}&url=${encodeURIComponent(link || '')}`,
+    `https://telegram.me/share/url?text=${encodeURIComponent(message || '')}&url=${encodeURIComponent(link || '')}`,
   vk: (link, message) =>
-    `http://vk.com/share.php?title=${encodeURIComponent(
-      message || ''
-    )}&url=${encodeURIComponent(link || '')}`,
+    `http://vk.com/share.php?title=${encodeURIComponent(message || '')}&url=${encodeURIComponent(link || '')}`,
   hacker: (link, message) =>
-    `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
-      link || ''
-    )}&t=${encodeURIComponent(message)}`,
+    `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(link || '')}&t=${encodeURIComponent(message)}`,
   xing: (link, message) =>
-    `https://www.xing.com/app/user?op=share;url=${encodeURIComponent(
-      link || ''
-    )};title=${encodeURIComponent(message)}.`,
+    `https://www.xing.com/app/user?op=share;url=${encodeURIComponent(link || '')};title=${encodeURIComponent(
+      message,
+    )}.`,
   mail: (link, message) =>
-    `mailto:?subject=${encodeURIComponent(
-      message || ''
-    )}&body=${encodeURIComponent(link || '')}`,
+    `mailto:?subject=${encodeURIComponent(message || '')}&body=${encodeURIComponent(link || '')}`,
   pinterest: (link, message) =>
-    `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(
-      link || ''
-    )}&media=${encodeURIComponent(link || '')}&description=${encodeURIComponent(
-      message || ''
-    )}`,
+    `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(link || '')}&media=${encodeURIComponent(
+      link || '',
+    )}&description=${encodeURIComponent(message || '')}`,
   linkedin: (link, message) =>
-    `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-      link || ''
-    )}&title=${encodeURIComponent(message || '')}&summary=${encodeURIComponent(
-      message || ''
-    )}&source=${encodeURIComponent(link || '')}`
+    `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(link || '')}&title=${encodeURIComponent(
+      message || '',
+    )}&summary=${encodeURIComponent(message || '')}&source=${encodeURIComponent(link || '')}`,
 };

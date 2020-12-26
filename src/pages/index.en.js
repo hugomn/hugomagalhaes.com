@@ -16,62 +16,62 @@ export const pageQuery = graphql`
           defaultLink
         }
       }
-    },
+    }
     all: allMarkdownRemark(
       limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { draft: { ne: true }, featured: { ne: true} },
+        frontmatter: { draft: { ne: true }, featured: { ne: true } }
         fields: { langKey: { regex: "/(en|any)/" } }
-      },
+      }
     ) {
       edges {
-        node{
-          frontmatter{
-            title,
-            date,
+        node {
+          frontmatter {
+            title
+            date
             image {
-              childImageSharp{
-                  sizes(maxWidth: 750) {
-                      ...GatsbyImageSharpSizes
-                  }
+              childImageSharp {
+                sizes(maxWidth: 750) {
+                  ...GatsbyImageSharpSizes
+                }
               }
             }
-          },
-          fields{
-            slug,
+          }
+          fields {
+            slug
             langKey
-          },
-          excerpt,
+          }
+          excerpt
           timeToRead
         }
       }
-    },
+    }
     featured: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { draft: { ne: true }, featured: { eq: true} },
+        frontmatter: { draft: { ne: true }, featured: { eq: true } }
         fields: { langKey: { regex: "/(en|any)/" } }
-      },
+      }
     ) {
       edges {
-        node{
-          frontmatter{
-            title,
-            date,
+        node {
+          frontmatter {
+            title
+            date
             image {
-              childImageSharp{
-                  sizes(maxWidth: 750) {
-                      ...GatsbyImageSharpSizes
-                  }
+              childImageSharp {
+                sizes(maxWidth: 750) {
+                  ...GatsbyImageSharpSizes
+                }
               }
             }
-          },
-          fields{
-            slug,
+          }
+          fields {
+            slug
             langKey
-          },
-          excerpt,
+          }
+          excerpt
           timeToRead
         }
       }

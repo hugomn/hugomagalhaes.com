@@ -17,8 +17,8 @@ export const Input = styled.input`
   &:focus,
   &:active {
     outline: none;
-    border: 1px solid ${props => props.theme.colors.brand};
-    box-shadow: 0px 0px 1px 0px ${props => props.theme.colors.brand};
+    border: 1px solid ${(props) => props.theme.colors.brand};
+    box-shadow: 0px 0px 1px 0px ${(props) => props.theme.colors.brand};
   }
   ${media.md`
     font-size: ${({ theme: t }) => t.scale(0.2)};

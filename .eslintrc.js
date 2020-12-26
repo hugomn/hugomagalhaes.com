@@ -1,18 +1,12 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2020: true,
-  },
-  extends: ["prettier"],
+  extends: ['prettier'],
   parserOptions: {
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-      jsx: true,
-    },
-    sourceType: "module",
+    ecmaVersion: 6,
+    sourceType: 'module',
   },
-  plugins: ["prettier"],
+  plugins: ['babel', 'prettier'],
+  parser: 'babel-eslint',
   rules: {
-    "prettier/prettier": "error",
+    'prettier/prettier': 'error',
   },
 };

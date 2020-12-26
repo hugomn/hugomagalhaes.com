@@ -2,7 +2,7 @@ import * as fonts from '../constants/fonts';
 
 const round = (x, n) => Math.round(x * (n * 10)) / (n * 10);
 const scaleN = (n) => round(Math.pow(1.2, n), 3);
-const scale = n => `${scaleN(n)}rem`;
+const scale = (n) => `${scaleN(n)}rem`;
 const headerHeight = 84;
 
 const brandColor = '#456EF6';
@@ -14,7 +14,7 @@ const colors = {
   brand: brandColor,
   accent,
   white: '#FFFFFF',
-  black: '#454545', 
+  black: '#454545',
   dark,
   lightColors,
   red: '#FF0000',
@@ -24,9 +24,7 @@ const colors = {
   darkGreen: '#038252',
   lightGreen: '#00ab6b2e',
 
-  blackShades: [
-    '#393E41',
-  ]
+  blackShades: ['#393E41'],
 };
 
 const theme = {
@@ -42,7 +40,7 @@ const theme = {
   borderRadius: '0.2rem',
   lineHeight: 1.5,
   focus: {
-    border: '0.4rem red solid'
+    border: '0.4rem red solid',
   },
   p: {
     fontSize: scale(1.25),
@@ -53,8 +51,8 @@ const theme = {
     textDecoration: 'none',
     hover: {
       color: colors.accent[0],
-      textDecoration: 'underline'
-    }
+      textDecoration: 'underline',
+    },
   },
   header: {
     height: headerHeight,
@@ -63,13 +61,13 @@ const theme = {
       textAlign: 'left',
       padding: `${scale(0)} 0 0 0`,
       margin: `0 0 ${scale(6)} 0`,
-      lineHeight: scaleN(0)
+      lineHeight: scaleN(0),
     },
     subTitle: {
       fontSize: `${scale(0)}`,
       padding: `${scale(-4)} 0 0 0`,
       margin: `${scale(-20)} 0 0 0`,
-      lineHeight: scaleN(-1)
+      lineHeight: scaleN(-1),
     },
     isHome: {
       title: {
@@ -77,29 +75,29 @@ const theme = {
         textAlign: 'center',
         padding: `${scale(2)} 0 0 0`,
         margin: `${scale(0)} 0 ${scale(4)} 0`,
-        lineHeight: scaleN(0)
+        lineHeight: scaleN(0),
       },
       subTitle: {
         fontSize: `${scale(0)}`,
         padding: `${scale(-4)} 0 0 0`,
         margin: `0`,
-        lineHeight: scaleN(-1)
-      }
-    }
+        lineHeight: scaleN(-1),
+      },
+    },
   },
   menu: {
     mobile: {
       padding: `${scale(3)} ${scale(3)}`,
       opened: {
-        bg: colors.blackShades[0]
+        bg: colors.blackShades[0],
       },
       closed: {
-        bg: 'transparent'
+        bg: 'transparent',
       },
       label: {
         width: scale(3),
         height: scale(3),
-        fontSize: scale(3.2)
+        fontSize: scale(3.2),
       },
       a: {
         fontFamily: fonts.SansSerif,
@@ -108,12 +106,12 @@ const theme = {
         textAlign: 'left',
         color: colors.white,
         active: {
-          color: colors.brand
-        }
+          color: colors.brand,
+        },
       },
       ul: {
         margin: `${scale(0.2)} 0 0 ${scale(0.2)}`,
-      }
+      },
     },
     desktop: {
       padding: `${scale(3.8)} ${scale(3)}`,
@@ -126,15 +124,15 @@ const theme = {
         textAlign: 'left',
         color: colors.black,
         active: {
-          color: colors.brand
+          color: colors.brand,
         },
         hover: {
-          color: colors.brand
-        }
+          color: colors.brand,
+        },
       },
       ul: {
         margin: `0 ${scale(1)} 0 auto`,
-      }
+      },
     },
   },
   socialLinks: {
@@ -146,44 +144,44 @@ const theme = {
       margin: `0 0 ${scale(0)}`,
       padding: `0`,
       hover: {
-        color: colors.brand
-      }
-    }
+        color: colors.brand,
+      },
+    },
   },
   welcome: {
     margin: 0,
     padding: `${scale(0)} 0`,
-    backgroundColor: colors.accent[1]
+    backgroundColor: colors.accent[1],
   },
   h1: {
     fontSize: scale(5.8),
     margin: 0,
-    padding: `${scale(8)} 0 0 0`
+    padding: `${scale(8)} 0 0 0`,
   },
   h2: {
     fontSize: scale(3.8),
     margin: 0,
-    padding: `${scale(8)} 0 0 0`
+    padding: `${scale(8)} 0 0 0`,
   },
   h3: {
     fontSize: scale(3),
     margin: 0,
-    padding: `${scale(6)} 0 0 0`
+    padding: `${scale(6)} 0 0 0`,
   },
   h4: {
     fontSize: scale(2),
     margin: 0,
-    padding: `${scale(6)} 0 0 0`
+    padding: `${scale(6)} 0 0 0`,
   },
   h5: {
     fontSize: scale(1),
     margin: 0,
-    padding: `${scale(4)} 0 0 0`
+    padding: `${scale(4)} 0 0 0`,
   },
   h6: {
     fontSize: scale(1),
     margin: 0,
-    padding: `${scale(4)} 0 0 0`
+    padding: `${scale(4)} 0 0 0`,
   },
   blog: {
     author: {
@@ -191,8 +189,8 @@ const theme = {
       fontSize: scale(-0.7),
       lineHeight: scaleN(2),
       time: {
-        color: colors.dark[3]
-      }
+        color: colors.dark[3],
+      },
     },
     list: {
       margin: `0 0 ${scale(4)} 0`,
@@ -209,7 +207,7 @@ const theme = {
         border: '1px solid rgba(0,0,0,.125);',
         padding: scale(1.2),
         hover: {
-          backgroundColor: colors.blackShades[0]
+          backgroundColor: colors.blackShades[0],
         },
         title: {
           fontFamily: fonts.SansSerif,
@@ -218,8 +216,8 @@ const theme = {
           margin: `0 0 ${scale(-0.8)}`,
           color: colors.black,
           hover: {
-            color: colors.brand
-          }
+            color: colors.brand,
+          },
         },
         text: {
           fontFamily: fonts.SansSerif,
@@ -229,7 +227,7 @@ const theme = {
           padding: `0`,
           margin: `0`,
         },
-      }
+      },
     },
     post: {
       padding: '20px',
@@ -256,24 +254,24 @@ const theme = {
           margin: `${scale(0)} -50rem`,
           padding: `0 50rem`,
           code: {
-            color: colors.white
-          }
+            color: colors.white,
+          },
         },
         a: {
-          color: colors.green
+          color: colors.green,
         },
         p: {
           fontSize: scale(1),
           margin: 0,
-          padding: `2rem 0 0 0`
+          padding: `2rem 0 0 0`,
         },
         ul: {
           fontSize: scale(1),
           margin: 0,
-          padding: `${scale(0)}`
-        }
-      }
-    }
+          padding: `${scale(0)}`,
+        },
+      },
+    },
   },
   page: {
     padding: '20px',
@@ -289,9 +287,9 @@ const theme = {
       p: {
         fontSize: scale(1),
         margin: 0,
-        padding: `2rem 0 0 0`
+        padding: `2rem 0 0 0`,
       },
-    }
+    },
   },
   i18n: {
     selectLanguage: {
@@ -303,11 +301,11 @@ const theme = {
         fontWeight: 500,
         borderRadius: '0.2rem',
         selected: {
-          backgroundColor: colors.lightGreen
-        }
-      }
-    }
-  }
+          backgroundColor: colors.lightGreen,
+        },
+      },
+    },
+  },
 };
 
 export default theme;

@@ -16,7 +16,11 @@ const NewsletterForm = () => {
           <Box>
             <img height="86" src="/img/grow_newsletter.png" alt="Grow Newsletter" />
           </Box>
-          <Text textAlign="center" lineHeight="1.6" fontWeight="200" mt="3" px="4" py="2">Grow is a project led by me and my friend Daniel Watts, which delivers curated content for engineering leaders, CTOs and anyone interested in helping people grow and building the teams that are building software.</Text>
+          <Text textAlign="center" lineHeight="1.6" fontWeight="200" mt="3" px="4" py="2">
+            Grow is a project led by me and my friend Daniel Watts, which delivers curated content for engineering
+            leaders, CTOs and anyone interested in helping people grow and building the teams that are building
+            software.
+          </Text>
         </Flex>
         <Form
           action="https://www.getrevue.co/profile/grow/add_subscriber"
@@ -28,7 +32,7 @@ const NewsletterForm = () => {
           <Flex flexDirection="column" p={[4, 5]} minWidth={['auto', 'auto', '450px']}>
             <Title>Join Grow Newsletter</Title>
             <Label color="white" htmlFor="email" fontWeight="500">
-                E-mail address:
+              E-mail address:
             </Label>
             <Input
               type="email"
@@ -40,7 +44,7 @@ const NewsletterForm = () => {
               bg="accent.0"
             />
             <Label color="white" htmlFor="email" fontWeight="500">
-                First name (optional):
+              First name (optional):
             </Label>
             <Input
               type="text"
@@ -56,7 +60,8 @@ const NewsletterForm = () => {
           </Flex>
         </Form>
       </ResponsiveFlex>
-    </Container>);
+    </Container>
+  );
 };
 
 const ResponsiveFlex = styled(Flex)`
@@ -68,7 +73,7 @@ const ResponsiveFlex = styled(Flex)`
 
 const Container = styled.section`
   margin: 70px 0px 50px;
-  border: ${props => props.theme.blog.list.item.border};
+  border: ${(props) => props.theme.blog.list.item.border};
   border-radius: 0.25rem;
 `;
 
@@ -82,7 +87,7 @@ const Title = styled.h2`
 
 const Form = styled.form`
   border-radius: 0.25rem;
-  background: #456EF7 url('/img/welcome_bg.png') repeat-x bottom left;
+  background: #456ef7 url('/img/welcome_bg.png') repeat-x bottom left;
   background-size: 1px 408px;
 `;
 

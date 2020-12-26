@@ -4,22 +4,23 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 export const getItemsFromArray = (items) =>
-  items.map(i => ({
+  items.map((i) => ({
     label: i,
-    value: i
+    value: i,
   }));
 
-export const addAll = (items) => 
-  [{
-    label: 'all',
-    value: ''
-  }].concat(items);
+export const addAll = (items) =>
+  [
+    {
+      label: 'all',
+      value: '',
+    },
+  ].concat(items);
 
 class Select extends React.PureComponent {
-
   onChange = (event) => {
     this.props.onChange(event.target.value);
-  }
+  };
 
   render() {
     const { label, items, selected } = this.props;
@@ -35,17 +36,19 @@ class Select extends React.PureComponent {
         </select>
       </label>
     );
-  };
+  }
 }
 
 Select.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.any.isRequired,
-    label: PropTypes.string.isRequired
-  })).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.any.isRequired,
+      label: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   selected: PropTypes.any,
   label: PropTypes.string.isRequired,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 export default Select;

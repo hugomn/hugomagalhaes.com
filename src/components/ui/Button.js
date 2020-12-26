@@ -5,8 +5,7 @@ const Button = styled.button`
   box-sizing: border-box;
   display: inline-block;
   text-align: center;
-  background-color: ${({ secondary, theme }) =>
-    secondary ? theme.colors.accent[3] : theme.colors.accent[2]};
+  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.accent[3] : theme.colors.accent[2])};
   font-size: ${({ theme }) => theme.scale(-0.6)};
   font-family: ${({ theme }) => theme.fonts.Poppins};
   font-weight: 500;

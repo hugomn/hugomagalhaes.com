@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaFacebook, FaGoogle, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import styled from 'styled-components';
-import { visible } from '../constants/responsive'; 
+import { visible } from '../constants/responsive';
 import links from '../constants/socialLinks';
 import DisqusCounter from './DisqusCounter';
-
 
 const Ul = styled.ul`
   display: flex;
@@ -13,23 +12,23 @@ const Ul = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: ${props => props.theme.socialLinks.margin};
-  padding: ${props => props.theme.socialLinks.padding};
+  margin: ${(props) => props.theme.socialLinks.margin};
+  padding: ${(props) => props.theme.socialLinks.padding};
   list-style: none;
 `;
 
 const A = styled.a`
-  color: ${props => props.theme.socialLinks.a.color};
+  color: ${(props) => props.theme.socialLinks.a.color};
   text-decoration: none;
-  font-size: ${props => props.theme.socialLinks.a.fontSize};
+  font-size: ${(props) => props.theme.socialLinks.a.fontSize};
   display: inline-block;
-  margin: ${props => props.theme.socialLinks.a.margin};
-  padding: ${props => props.theme.socialLinks.a.padding};
+  margin: ${(props) => props.theme.socialLinks.a.margin};
+  padding: ${(props) => props.theme.socialLinks.a.padding};
   transition: 0.3s;
   opacity: 0.7;
   &:hover {
     opacity: 1;
-    color: ${props => props.theme.socialLinks.a.hover.color};
+    color: ${(props) => props.theme.socialLinks.a.hover.color};
     transition: 0.3s;
   }
 `;
@@ -44,7 +43,7 @@ const Wrapper = styled.section`
 
 const DisqusContainer = styled.li`
   color: rgba(0, 0, 0, 0.44);
-  border-top: 1px solid rgba(0, 0, 0, 0.30);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
   padding-top: 20px;
   font-size: 0.7rem;
   max-width: 60px;
@@ -57,7 +56,8 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
       <Ul>
         <li>
           <A
-            href={links.twitter(url, message)} target="_blank"
+            href={links.twitter(url, message)}
+            target="_blank"
             rel="noreferrer noopener"
             aria-label="Share on twitter"
             title="Share on twitter"
@@ -67,7 +67,8 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
         </li>
         <li>
           <A
-            href={links.facebook(url, message)} target="_blank"
+            href={links.facebook(url, message)}
+            target="_blank"
             rel="noreferrer noopener"
             aria-label="Share on facebook"
             title="Share on facebook"
@@ -77,7 +78,8 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
         </li>
         <li>
           <A
-            href={links.linkedin(url, message)} target="_blank"
+            href={links.linkedin(url, message)}
+            target="_blank"
             rel="noreferrer noopener"
             aria-label="Share on Linkedin"
             title="Share on Linkedin"
@@ -86,10 +88,7 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
           </A>
         </li>
         <DisqusContainer>
-          <DisqusCounter
-            url={url}
-            shortname={disqusShortname}
-          />
+          <DisqusCounter url={url} shortname={disqusShortname} />
         </DisqusContainer>
       </Ul>
     </Wrapper>
@@ -99,7 +98,7 @@ const ShareWidget = ({ disqusShortname, url, message }) => {
 ShareWidget.propTypes = {
   disqusShortname: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired
+  message: PropTypes.string.isRequired,
 };
 
 export default ShareWidget;

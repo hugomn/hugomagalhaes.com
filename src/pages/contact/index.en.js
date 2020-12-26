@@ -28,7 +28,7 @@ const i18n = {
   ),
   description: `
     I’d love to chat and meet new people. I’m looking for problems worth solving, a place that will challenge me, and opportunities that I can help others and myself grow. 
-  `
+  `,
 };
 
 export default (props) => <Page i18n={i18n} {...props} />;

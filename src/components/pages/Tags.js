@@ -8,8 +8,8 @@ import Helmet from 'react-helmet';
 import Layout from '../../components/layout';
 
 const Wrapper = styled.section`
-  margin: ${props => props.theme.page.margin};
-  padding: ${props => props.theme.page.padding};
+  margin: ${(props) => props.theme.page.margin};
+  padding: ${(props) => props.theme.page.padding};
 `;
 
 const Nav = styled.nav`
@@ -32,13 +32,13 @@ const Li = styled.li`
 `;
 
 const Header = styled.header`
-  font-family: ${props => props.theme.page.header.fontFamily};
+  font-family: ${(props) => props.theme.page.header.fontFamily};
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  margin: ${props => props.theme.page.header.margin};
+  margin: ${(props) => props.theme.page.header.margin};
 `;
 
 const H1 = styled.h1`
-  font-size: ${props => props.theme.page.header.fontSize};
+  font-size: ${(props) => props.theme.page.header.fontSize};
   padding: 0;
   span {
     border-bottom: 1px solid rgba(0, 0, 0, 0.44);
@@ -48,14 +48,14 @@ const H1 = styled.h1`
   }
 `;
 
-const Tags = props => {
+const Tags = (props) => {
   const allTags = props.data.allMarkdownRemark.group;
 
   return (
     <Layout location={props.location}>
       <Wrapper>
         <FormattedMessage id="tags">
-          {txt => (
+          {(txt) => (
             <Header>
               <Helmet title={txt} meta={[{ name: 'description', content: txt }]} />
               <H1>
@@ -66,11 +66,11 @@ const Tags = props => {
         </FormattedMessage>
         <Nav>
           <ul>
-            {allTags.map(tag => (
+            {allTags.map((tag) => (
               <Li key={tag.fieldValue}>
                 <Link
                   style={{
-                    textDecoration: 'none'
+                    textDecoration: 'none',
                   }}
                   to={`/tags/${kebabCase(tag.fieldValue)}/`}
                 >
@@ -87,7 +87,7 @@ const Tags = props => {
 
 Tags.propTypes = {
   data: PropTypes.object,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Tags;

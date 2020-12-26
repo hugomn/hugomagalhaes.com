@@ -17,8 +17,8 @@ const Ul = styled.ul`
       display: inline-block;
     }
 
-    a:after{
-      content: ' > '
+    a:after {
+      content: ' > ';
     }
   }
 `;
@@ -27,11 +27,7 @@ const BreadCrumbItem = ({ link, label }) => {
   return (
     <li>
       <FormattedMessage id={label} defaultMessage={label}>
-        {(txt) => (
-          <Link to={link}>
-            {txt}
-          </Link>
-        )}
+        {(txt) => <Link to={link}>{txt}</Link>}
       </FormattedMessage>
     </li>
   );
@@ -39,25 +35,21 @@ const BreadCrumbItem = ({ link, label }) => {
 
 BreadCrumbItem.propTypes = {
   link: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
 };
 
 const BreadCrumb = ({ items }) => {
   return (
     <Ul>
-      {
-        items.map(item => (
-          <BreadCrumbItem
-            {...item}
-          />
-        ))
-      }
+      {items.map((item) => (
+        <BreadCrumbItem {...item} />
+      ))}
     </Ul>
   );
 };
 
 BreadCrumb.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
 };
 
 export default BreadCrumb;

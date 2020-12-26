@@ -8,11 +8,11 @@ export default class DiscusCounter extends Component {
     shortname: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     children: PropTypes.element,
-    isLink: PropTypes.bool
+    isLink: PropTypes.bool,
   };
 
   static defaultProps = {
-    isLink: false
+    isLink: false,
   };
 
   componentDidMount() {
@@ -56,9 +56,9 @@ export default class DiscusCounter extends Component {
         'span',
         {
           className: ['disqus-comment-count'],
-          'data-disqus-url': this.props.url
+          'data-disqus-url': this.props.url,
         },
-        this.props.children
+        this.props.children,
       );
     }
     return counterElement;

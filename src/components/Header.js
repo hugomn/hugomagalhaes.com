@@ -11,62 +11,66 @@ const delta = 5;
 const navbarHeight = 64;
 
 class Header extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       didScroll: true,
       lastScrollTop: 0,
-      hidden: false
+      hidden: false,
     };
-  };
+  }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-  };
+  }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-  };
+  }
 
   hideHeader = () => {
     this.setState({
-      hidden: true
+      hidden: true,
     });
   };
 
   showHeader = () => {
     this.setState({
-      hidden: false
+      hidden: false,
     });
   };
 
   hasScrolled = throttle(() => {
     const st = window.scrollY;
-    if (Math.abs(this.state.lastScrollTop - st) <= delta) { return; }
+    if (Math.abs(this.state.lastScrollTop - st) <= delta) {
+      return;
+    }
     if (st > this.state.lastScrollTop && st > navbarHeight) {
       this.hideHeader();
     } else {
-      if(st < this.getDocHeight()) {
+      if (st < this.getDocHeight()) {
         this.showHeader();
       }
     }
     this.setState({
-      lastScrollTop: st
+      lastScrollTop: st,
     });
   }, 250);
 
   getDocHeight = () => {
     return Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.body.clientHeight,
+      document.documentElement.clientHeight,
     );
   };
 
   handleScroll = () => {
     this.setState({
-      didScroll: true
+      didScroll: true,
     });
     this.hasScrolled();
   };
@@ -87,25 +91,23 @@ class Header extends React.Component {
         </FixedContainer>
       </Wrapper>
     );
-  } 
-};
+  }
+}
 
 const Wrapper = styled.header`
   background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 4px 12px 0 rgba(0,0,0,.05) !important;
-  border-top: 4px solid ${props => props.theme.colors.brand};
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05) !important;
+  border-top: 4px solid ${(props) => props.theme.colors.brand};
   transition: top 0.4s ease-in-out;
-  height: ${props => props.theme.header.height}px;
-  top: ${props => props.hidden ? `-${props.theme.header.height}px` : 0};
+  height: ${(props) => props.theme.header.height}px;
+  top: ${(props) => (props.hidden ? `-${props.theme.header.height}px` : 0)};
   box-sizing: border-box;
   position: fixed;
   width: 100%;
-  z-index: 9; 
+  z-index: 9;
 `;
 
-const MenuContainer = styled(Cell)`
-
-`;
+const MenuContainer = styled(Cell)``;
 
 const LanguageContainer = styled(Cell)`
   text-align: right;
@@ -114,7 +116,7 @@ const LanguageContainer = styled(Cell)`
 Header.propTypes = {
   langs: PropTypes.array,
   menu: PropTypes.array.isRequired,
-  url: PropTypes.string
+  url: PropTypes.string,
 };
 
 export default Header;

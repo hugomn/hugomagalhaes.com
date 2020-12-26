@@ -1,16 +1,16 @@
-const siteMetadata = require("./src/data/siteMetadata");
+const siteMetadata = require('./src/data/siteMetadata');
 
 module.exports = {
   siteMetadata,
   plugins: [
-    "gatsby-transformer-sharp",
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
             resolve: `gatsby-remark-figure-caption`,
-            options: { figureClassName: "md-figure" },
+            options: { figureClassName: 'md-figure' },
           },
           {
             resolve: `gatsby-remark-images`,
@@ -22,57 +22,57 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-responsive-iframe",
+            resolve: 'gatsby-remark-responsive-iframe',
             options: {
-              wrapperStyle: "margin-bottom: 1.0725rem",
+              wrapperStyle: 'margin-bottom: 1.0725rem',
             },
           },
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-smartypants",
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
         ],
       },
     },
-    "gatsby-plugin-sharp",
+    'gatsby-plugin-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages",
+        name: 'pages',
       },
     },
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Hugo Nogueira",
-        short_name: "Hugo Nogueira",
+        name: 'Hugo Nogueira',
+        short_name: 'Hugo Nogueira',
         icons: [
           {
-            src: "/logo.svg",
-            sizes: "any",
-            type: "image/svg+xml",
+            src: '/logo.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
           },
         ],
-        start_url: "/",
-        background_color: "white",
-        theme_color: "white",
-        display: "minimal-ui",
+        start_url: '/',
+        background_color: 'white',
+        theme_color: 'white',
+        display: 'minimal-ui',
       },
     },
-    "gatsby-plugin-offline",
-    "gatsby-plugin-react-helmet",
+    'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
     {
-      resolve: "gatsby-plugin-sitemap",
+      resolve: 'gatsby-plugin-sitemap',
     },
     {
-      resolve: "gatsby-plugin-i18n",
+      resolve: 'gatsby-plugin-i18n',
       options: {
-        langKeyForNull: "en",
-        langKeyDefault: "en",
+        langKeyForNull: 'en',
+        langKeyDefault: 'en',
         useLangKeyLayout: true,
         prefixDefault: false,
         markdownRemark: {
-          postPage: "src/templates/blog-post.js",
+          postPage: 'src/templates/blog-post.js',
           query: `
           {
               allMarkdownRemark {
@@ -91,17 +91,17 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-i18n-tags",
+      resolve: 'gatsby-plugin-i18n-tags',
       options: {
         // Default options
-        tagPage: "src/templates/tag-page.js",
-        tagsUrl: "/tags/",
-        langKeyForNull: "en",
-        langKeyDefault: "en",
+        tagPage: 'src/templates/tag-page.js',
+        tagsUrl: '/tags/',
+        langKeyForNull: 'en',
+        langKeyDefault: 'en',
         prefixDefault: false,
       },
     },
-    "gatsby-plugin-styled-components",
+    'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -109,7 +109,7 @@ module.exports = {
           `limelight`,
           `Poppins:300,400,500,700`, // you can also specify font weights and styles
         ],
-        display: "swap",
+        display: 'swap',
       },
     },
     `gatsby-alias-imports`,

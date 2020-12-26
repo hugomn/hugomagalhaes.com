@@ -19,14 +19,14 @@ import {
   bottom,
   left,
   height,
-  gridArea
+  gridArea,
 } from 'styled-system';
 
 import themed from './helpers';
 
 export const Box = styled('div')(
   {
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
   },
   space,
   color,
@@ -48,8 +48,8 @@ export const Box = styled('div')(
   left,
   height,
   gridArea,
-  props => props.css,
-  themed('Box')
+  (props) => props.css,
+  themed('Box'),
 );
 
 Box.displayName = 'Box';
@@ -62,5 +62,5 @@ Box.propTypes = {
   ...display.propTypes,
   ...width.propTypes,
   ...maxWidth.propTypes,
-  ...fontSize.propTypes
+  ...fontSize.propTypes,
 };
