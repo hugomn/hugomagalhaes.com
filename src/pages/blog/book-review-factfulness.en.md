@@ -1,5 +1,5 @@
 ---
-title: 'The world is not that bad! Book review: Factfullness'
+title: 'The world is not that bad! Book review: Factfulness'
 date: '2021-01-10'
 layout: post
 draft: false
@@ -13,7 +13,7 @@ image: ./images/20210110.jpg
 
 Everyone agrees that 2020 was not the greatest year, and that 2021 has a great challenge ahead of it. Particularly speaking, one of my less successful plans for last year was to write more often here. And to try to do it differently in 2021, I will try to write reviews of the best books I read during the year. Feel free to send any feedback in the comments below, and I hope you enjoy it! 🙌🏽
 
-To start the new series, I bring the last book I read in 2020: **_"Factfullnes - 10 reasons why we are wrong about the world - and why things are better than you think"_**. As Bill Gates said, Factfullness is without a doubt "one of the most important books I have ever read", and I will try to explain why.
+To start the new series, I bring the last book I read in 2020: **_"Factfulness - 10 reasons why we are wrong about the world - and why things are better than you think"_**. As Bill Gates said, Factfulness is without a doubt "one of the most important books I have ever read", and I will try to explain why.
 
 ## What is Factfulness?
 

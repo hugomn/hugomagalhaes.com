@@ -1,5 +1,5 @@
 ---
-title: 'O mundo não é tão ruim assim! Review de livro: Factfullness'
+title: 'O mundo não é tão ruim assim! Review de livro: Factfulness'
 date: '2021-01-10'
 layout: post
 draft: false
@@ -13,7 +13,7 @@ image: ./images/20210110.jpg
 
 Ninguém pode negar que 2020 não foi lá grandes coisas, e que 2021 tem um grande desafio pela frente. Particularmente falando, um de meus não tão bem sucedidos planos para o ano passado foi de escrever mais frequentemente aqui. E pra tentar fazer diferente em 2021, tentarei escrever reviews dos melhores livros que ler durante o ano. Fique à vontade para enviar qualquer feedback nos comentários abaixo, e espero que gostem! 🙌🏽
 
-Para começar a nova série, trago o último livro que li em 2020: _"Factfullnes - 10 razões pelas quais estamos errados sobre o mundo - e por quê as coisas estão melhor que você pensa"_. Assim como disse Bill Gates, Factfullness é sem dúvida "um dos livros mais importantes que já li", e vou tentar te explicar por quê.
+Para começar a nova série, trago o último livro que li em 2020: **_"Factfulness - 10 razões pelas quais estamos errados sobre o mundo - e por quê as coisas estão melhor que você pensa"_**. Assim como disse Bill Gates, Factfulness é sem dúvida "um dos livros mais importantes que já li", e vou tentar te explicar por quê.
 
 ## O que é Factfulness?
 
