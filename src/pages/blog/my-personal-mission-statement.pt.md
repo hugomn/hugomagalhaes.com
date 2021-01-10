@@ -4,8 +4,6 @@ date: '2018-08-01'
 layout: post
 draft: false
 featured: false
-tags:
-  - Testando
 image: ./images/20180801.jpg
 structuredData:
   alternativeHeadline: ...

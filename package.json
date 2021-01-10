@@ -60,6 +60,7 @@
     "gatsby-plugin-sitemap": "2.9.0",
     "gatsby-plugin-styled-components": "3.7.0",
     "gatsby-remark-copy-linked-files": "2.7.0",
+    "gatsby-remark-image-attributes": "0.2.8",
     "gatsby-remark-images": "3.8.1",
     "gatsby-remark-prismjs": "3.10.0",
     "gatsby-remark-responsive-iframe": "2.8.0",

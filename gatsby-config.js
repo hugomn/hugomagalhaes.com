@@ -22,6 +22,13 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-image-attributes`,
+            options: {
+              styleAttributes: true,
+              dataAttributes: false,
+            },
+          },
+          {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
               wrapperStyle: 'margin-bottom: 1.0725rem',
