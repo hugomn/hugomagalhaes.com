@@ -23,7 +23,6 @@ const Index = (props) => {
           </H2>
           <PostCardList posts={featuredPosts} author={author} />
         </FeaturedContainer>
-        <NewsletterForm />
         <AllStoriesContainer>
           <H2>
             <FormattedMessage id="index.stories">{(txt) => <span>{txt}</span>}</FormattedMessage>
@@ -33,6 +32,7 @@ const Index = (props) => {
             {(txt) => <BtnLink to={`/${langKey !== 'en' ? `${langKey}/` : ''}blog`}>{txt}</BtnLink>}
           </FormattedMessage>
         </AllStoriesContainer>
+        <NewsletterForm />
       </Wrapper>
     </Layout>
   );
