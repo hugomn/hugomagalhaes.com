@@ -47,4 +47,6 @@ O livro, no entanto, recebeu algumas críticas por ser extremamente otimista, at
 ![](./images/20210110_factfulness.jpg#width=160px;padding=8px 40px 40px 0;float=left; 'Income levels. Source: Gapminder')
 Factfulness é uma coleção fantástica de experiências e insights que nos ajudam a entender melhor como temos evoluído. Os 10 instintos apresentados no livro, também nos ajudam a entender como alguns movimentos extremistas tem ganhado força recentemente, como movimentos anti-vacinas, fascistas, neo-nazistas, etc. No fim das contas, o autor quer que desviemos nosso foco aos cinco riscos reais de nossa humanidade: pobreza, pandemias, colapso financeiro terceira guerra mundial e alterações climáticas.
 
+Minha nota final para o livro é 4,5/5. E deixo aqui a mensagem principal que levo após terminá-lo: nem tudo está tão ruim quanto parece. Nossos instintos podem nos enganar, então esteja sempre munido de dados e informações confiáveis. E um poquinho de história e positividade não faz mal a ninguém!
+
 Feliz 2021 e até o próximo review! 👋🏽
