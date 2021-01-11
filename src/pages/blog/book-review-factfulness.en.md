@@ -21,7 +21,7 @@ Factfulness, written by Hans Rosling, together with his two collaborators, Anna 
 
 Rosling was a doctor and teacher of International Health in Sweden. He has dedicated his life to two things: first, helping communities in different countries to achieve better health. He saved thousands of lives through direct medical work and by supporting local governments. The second was a passion to uncover lies and myths about the current state of the world.
 
-The book covers topics such as economic development, public health, population growth, and education. Rosling, during her lectures and conferences around the world, presented her findings to authorities, government leaders and ordinary people like you and me. Surprisingly, 80% of people usually perform worse than chimpanzees by randomly answering questions. Rosling then began to investigate why we have a worldview that is not only wrong, but often more drastic than reality.
+The book covers topics such as economic development, public health, population growth, and education. Rosling, during his lectures and conferences around the world, presented his findings to authorities, government leaders and ordinary people like you and me. Surprisingly, 80% of people usually perform worse than chimpanzees by randomly answering questions. Rosling then began to investigate why we have a worldview that is not only wrong, but often more drastic than reality.
 
 ## The gap instinct
 
