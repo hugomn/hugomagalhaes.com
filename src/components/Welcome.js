@@ -13,9 +13,9 @@ const Welcome = ({ author, className, langKey }) => {
   });
   const getBio = () => ({
     en:
-      "I'm an engineering lead at <a href=\"https://www.bcgdv.com\"><b>BCG Digital Ventures</b></a>. We invent, build and invest in startups with the world's most influential companies. I build high-performance products and teams.  I'm a software engineer with 12+ years of experience and I've been managing technology teams in the last 8 years.",
+      'I am a technology strategist, product development specialist and team manager with about 20 years of experience in software and consulting. I work as Venture CTO and Engineering Lead at <a href="https://www.bcgdv.com"><b>BCG Digital Ventures</b></a>, where we invent, build and invest in startups with the world\'s most influential companies. I\'ve been working recently on the Health Tech sector, mainly on software as Medical Device and apps on prescription for the german market (DiGA).',
     pt:
-      'Sou líder de engenharia na <a href="https://www.bcgdv.com"><b>BCG Digital Ventures</b></a>. Nós criamos, construímos e investimos em startups junto com as empresas mais influentes do mundo. Eu construo times e produtos de alta-performance. Sou um engenheiro de software e gerente de projetos com mais de 12 anos de experiência.',
+      'Sou estrategista de tecnologia, especialista em desenvolvimento de produtos e manager com cerca de 20 anos de experiência em software e consultoria. Trabalho como Venture CTO e Engineering Lead na <a href="https://www.bcgdv.com"><b>BCG Digital Ventures</b></a>, onde inventamos, construímos e investimos em startups com as empresas mais influentes do mundo. Tenho trabalhado recentemente no setor de Health Tech, principalmente em software como Dispositivo Médico e aplicativos sob prescrição para o mercado alemão (DiGA).',
   });
   return (
     <MainWrapper className={className}>
@@ -89,7 +89,7 @@ const Wrapper = styled(Grid)`
   grid-template-columns: auto 4.2rem 4.2rem auto;
   grid-gap: 0px;
   ${media.md`
-    height: 408px;
+    height: 468px;
     grid-auto-flow: column;
     grid-template-columns: auto 50rem 21.25rem auto;
   `}
@@ -102,7 +102,7 @@ const BioWrapper = styled(Cell)`
   ${media.md`
     text-align: left;
     background: url('/img/welcome_bg_curve.png') top right no-repeat;
-    background-size: 244px 408px;
+    background-size: 244px 468px;
     font-size: 2.625rem;
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
@@ -125,7 +125,7 @@ const PictureContainer = styled(Cell)`
   ${media.md`
     max-width: none;
     border-radius: 0%;
-    background-size: 1px 408px;
+    background-size: 1px 468px;
     grid-column: 3 / span 1;
     grid-row: 1 / span 1;
   `}
@@ -155,7 +155,7 @@ const RightGapCell = styled(Cell)`
   grid-row: 1 / span 1;
   ${media.md`
     background: url('/img/welcome_bg.png') top left;
-    background-size: 1px 408px;
+    background-size: 1px 468px;
   `}
 `;
 
@@ -166,7 +166,7 @@ const Name = styled.div`
   margin: 1.2rem 0 1.6rem;
   ${media.md`
     margin-bottom: 2.5rem;
-    margin-top: 0;
+    margin-top: 1rem;
     font-size: 2.625rem;
   `}
   .name {
