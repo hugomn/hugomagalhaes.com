@@ -8,8 +8,8 @@ import Avatar from './img/welcome_avatar.png';
 
 const Welcome = ({ author, className, langKey }) => {
   const getIntro = () => ({
-    en: `👋 Hello! My name is <span class="name">Hugo</span>`,
-    pt: `👋 Olá! Meu nome é <span class="name">Hugo</span>`,
+    en: `Hi! I'm <span class="name">Hugo</span> 👋 `,
+    pt: `Olá! Eu sou o <span class="name">Hugo</span> 👋 `,
   });
   const getBio = () => ({
     en:

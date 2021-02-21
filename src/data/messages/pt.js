@@ -7,6 +7,7 @@ module.exports = {
   blog: 'Blog',
   all: 'Todos',
   posts: 'Posts',
+  talks: 'Talks',
   'posts.seeMore': 'Ver todos os posts →',
   tags: 'Post Tags',
   'tags.allTagsLink': 'Ver todas as tags',
@@ -14,7 +15,6 @@ module.exports = {
       one {post}
       other {posts}
     } com a tag`,
-
   contact: 'Contato',
   call: 'Agende uma call',
   'index.featured': 'Posts em destaque',

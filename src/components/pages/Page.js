@@ -27,6 +27,15 @@ const Content = styled.section`
     font-size: ${(props) => props.theme.p.fontSize};
     line-height: ${(props) => props.theme.p.lineHeight};
   }
+  ul,
+  ol {
+    margin: ${(props) => props.theme.page.content.ul.margin};
+    padding: ${(props) => props.theme.page.content.ul.padding};
+  }
+
+  ul {
+    list-style: disc;
+  }
 `;
 
 const H1 = styled.h1`

@@ -268,7 +268,7 @@ const theme = {
         ul: {
           fontSize: scale(1),
           margin: 0,
-          padding: `${scale(0)}`,
+          padding: `${scale(2)}`,
         },
       },
     },
@@ -288,6 +288,11 @@ const theme = {
         fontSize: scale(1),
         margin: 0,
         padding: `2rem 0 0 0`,
+      },
+      ul: {
+        fontSize: scale(1),
+        margin: 0,
+        padding: `0 ${scale(2)}`,
       },
     },
   },
