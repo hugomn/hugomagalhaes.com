@@ -2,7 +2,7 @@ const authors = {
   hugomn: {
     name: 'Hugo Nogueira',
     additionalName: 'hugomn',
-    address: 'Berlin CA',
+    address: 'Berlin DE',
     birthDate: '1986-09-01',
     birthPlace: 'Juiz de Fora BR',
     brand: 'Hugo Nogueira, Software Engineer, Lead Front-end engineer, Senior ReactJs developer',
@@ -13,7 +13,7 @@ const authors = {
     givenName: 'Hugo',
     height: '...',
     homeLocation: 'Berlin',
-    jobTitle: 'Software Engineering Lead',
+    jobTitle: 'Engineering Lead',
     knows: '...',
     memberOf: '...',
     nationality: 'Brazilian',

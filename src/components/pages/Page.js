@@ -60,12 +60,25 @@ const Page = (props) => {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
         <FormattedMessage id={props.i18n.titleId}>
           {(title) => (
-            <Header>
-              <Helmet title={title} meta={[{ name: 'description', content: props.i18n.description }]} />
-              <H1>
-                <span>{title}</span>
-              </H1>
-            </Header>
+            <FormattedMessage id="title">
+              {(mainTitle) => (
+                <Header>
+                  <Helmet>
+                    <title>{title}</title>
+                    <meta name="description" content={props.i18n.description} />
+                    <meta property="og:title" content={`${title} | ${mainTitle}`} />
+                    <meta property="og:description" content={props.i18n.description} />
+                    <meta property="og:type" content="website" />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content={`${title} | ${mainTitle}`} />
+                    <meta name="twitter:description" content={props.i18n.description} />
+                  </Helmet>
+                  <H1>
+                    <span>{title}</span>
+                  </H1>
+                </Header>
+              )}
+            </FormattedMessage>
           )}
         </FormattedMessage>
         <Content>{props.i18n.content}</Content>
